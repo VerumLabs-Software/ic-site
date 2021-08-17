@@ -1,0 +1,5 @@
+mixin popup(name)
+  +b.popup(data-popup-wrapper=name)&attributes(attributes)
+    +e.overlay(data-popup-close=name)
+    +e.wrapper
+      block

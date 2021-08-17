@@ -1,0 +1,18 @@
+mixin footer(listData)
+  +b.FOOTER.footer&attributes(attributes)
+    .container
+      +e.content
+        +e.main
+          +e.main-top
+            +image-svg('logo').__logo
+            +inputbox._sm._dark.__inputbox.hide-sm
+              +input(data-mask="tel", type="tel")._sm._dark
+              +button._sm._primary Send me invite
+            +button(data-popup-trigger="country-code")._sm._primary.show-sm Send me invite
+          +list(getData(listData))._md._light-gray.__list
+          +e.copyright 2021 LPGgo
+        +e.buttons
+          +button._dark._google-play.__button
+            +image-svg('google-play')
+          +button._dark._app-store.__button
+            +image-svg('app-store')

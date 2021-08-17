@@ -1,0 +1,165 @@
+.client-block {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  $this: &;
+
+  &__popup {
+    position: relative;
+    height: 100%;
+    padding: 45px 35px 31px;
+    border-radius: radius(lg);
+    background-color: color(light);
+    box-shadow: 0 30px 40px rgba(color(black), 0.04);
+    transition: box-shadow $ease-main;
+
+    &::before {
+      @include triangle(color(light), down, 12px, absolute, true);
+      bottom: -12px;
+      left: 55px;
+
+      @include screen(lg) {
+        left: 44px;
+      }
+
+      @include screen(md) {
+        @include triangle(color(light), down, 8px, absolute, true);
+        bottom: -8px;
+        left: 33px;
+      }
+
+      @include screen(sm) {
+        @include triangle(color(light), down, 9px, absolute, true);
+        bottom: -9px;
+        left: 47px;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 30px 40px rgba(color(black), 0.1);
+    }
+
+    @include screen(lg) {
+      padding: 37px 29px 58px;
+    }
+
+    @include screen(md) {
+      border-radius: radius(md);
+      padding: 22px 22px 41px;
+    }
+
+    @include screen(sm) {
+      padding: 30px 30px 47px;
+      min-height: 250px;
+    }
+
+    @include screen(xxs) {
+      min-height: 335px;
+    }
+  }
+
+  &__author {
+    padding: 35px;
+
+    @include screen(lg) {
+      padding: 29px;
+    }
+
+    @include screen(md) {
+      padding: 21px;
+    }
+
+    @include screen(sm) {
+      padding: 27px 30px;
+    }
+  }
+
+  &__author-name {
+    margin-top: 21px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+
+    @include screen(lg) {
+      margin-top: 17px;
+      font-size: 18px;
+      line-height: 23px;
+    }
+
+    @include screen(md) {
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    @include screen(sm) {
+      margin-top: 15px;
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+
+  &__author-job {
+    margin-top: 7px;
+    color: color(dark-gray);
+
+    @include screen(lg) {
+      margin-top: 6px;
+      line-height: 26px;
+    }
+
+    @include screen(md) {
+      margin-top: 5px;
+      line-height: 16px;
+    }
+
+    @include screen(sm) {
+      margin-top: 5px;
+      line-height: 18px;
+    }
+  }
+
+  &__avatar {
+    max-width: 72px;
+
+    @include screen(lg) {
+      max-width: 60px;
+    }
+
+    @include screen(md) {
+      max-width: 46px;
+    }
+
+    @include screen(sm) {
+      max-width: 54px;
+    }
+  }
+
+  &__description.text {
+    margin-top: 23px;
+    line-height: 32px;
+
+    @include screen(lg) {
+      margin-top: 17px;
+      line-height: 26px;
+    }
+
+    @include screen(md) {
+      margin-top: 8px;
+      font-size: 10px;
+      line-height: 20px;
+    }
+
+    @include screen(sm) {
+      margin-top: 6px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+}

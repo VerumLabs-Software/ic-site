@@ -1,0 +1,29 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = ''
+
+block content
+  body.index-page
+    +header
+    +fixed-header('navigation').hide-sm.js-nav
+    +menu('full-navigation').show-sm
+
+    main
+      +section-empowering
+      +section-how-it-works
+      +section-achivements-promo
+      +section-achivements
+      +section-mobile-app
+      +section-clients
+      +section-youtube
+      +section-socials
+
+    +footer('full-navigation')
+
+    +popup('country-code')
+      +inputbox._lg._light
+        +input(data-mask="tel", type="tel")._lg._light
+      +button._primary._xl Send me invite
+
+    include ../../layouts/scripts

@@ -1,0 +1,23 @@
+mixin image-jpg(src, alt)
+  +b.image&attributes(attributes)
+    picture
+      source(srcset=`assets/images/${src}.webp`, type='image/webp')
+      source(srcset=`assets/images/${src}.jpg`, type='image/jpeg')
+      img(src=`assets/images/${src}.jpg`, alt=alt || '')
+    block
+
+mixin image-png(src, alt)
+  +b.image&attributes(attributes)
+    picture
+      source(srcset=`assets/images/${src}.webp`, type='image/webp')
+      source(srcset=`assets/images/${src}.png`, type='image/png')
+      img(src=`assets/images/${src}.png`, alt=alt || '')
+    block
+
+mixin image-svg(src, alt)
+  +b.image&attributes(attributes)
+    img(src=`assets/images/${src}.svg`, alt=alt || '')
+    block
+
+mixin parallax-image(src)
+  +b.parallax-image(data-parallax="scroll", data-image-src=`assets/images/${src}`)&attributes(attributes)

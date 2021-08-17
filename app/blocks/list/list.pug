@@ -1,0 +1,9 @@
+mixin list(json)
+  +b.UL.list&attributes(attributes)
+    each item in json
+      +e.LI.item
+        if (!item.external)
+          +e.A(href=item.href).link.js-anchor!=item.name
+        else
+          +e.A(href=item.href).link!=item.name
+    block

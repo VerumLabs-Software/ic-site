@@ -1,0 +1,77 @@
+.input {
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: radius(sm);
+  background-color: transparent;
+  font-weight: 500;
+  transition: border-color $ease-main, color $ease-main;
+
+  $this: &;
+
+  &_dark {
+    color: color(light);
+    border-color: rgba(color(light), 0.7);
+
+    &::placeholder {
+      color: rgba(color(gray), 0.8);
+    }
+  }
+
+  &_light {
+    color: color(dark);
+    border-color: color(gray);
+
+    &::placeholder {
+      color: color(gray);
+    }
+  }
+
+  &_sm {
+    padding: 0 18px;
+    height: 40px;
+    font-size: 13px;
+
+    @include screen(lg) {
+      font-size: 11px;
+      padding: 0 15px;
+      height: 33px;
+    }
+  }
+
+  &_md {
+    padding: 0 27px;
+    height: 57px;
+
+    @include screen(lg) {
+      font-size: 14px;
+      padding: 0 22px;
+      height: 48px;
+    }
+
+    @include screen(md) {
+      font-size: 12px;
+      padding: 0 11px;
+      height: 40px;
+    }
+  }
+
+  &_lg {
+    padding: 0 27px;
+    height: 57px;
+  }
+
+  &.parsley-error {
+    border-color: color(error);
+    color: color(error);
+  }
+}
+
+.textarea {
+  @extend .input;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 150px;
+  resize: none;
+}

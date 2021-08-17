@@ -1,0 +1,20 @@
+.video {
+  $this: &;
+
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  .ytp-gradient-top,
+  .ytp-gradient-bottom,
+  .ytp-chrome-top,
+  .ytp-chrome-bottom,
+  .ytp-scroll-min {
+    display: none;
+  }
+
+  iframe {
+    @include size(100%);
+  }
+}

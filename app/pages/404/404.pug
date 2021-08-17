@@ -1,0 +1,20 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = ' | Page Not Found'
+
+block content
+  body
+    +b.MAIN.not-found
+      +e.wrapper(data-scrollable-wrapper="")
+        +e.content(data-scrollable-content="")
+          +e.H1.title
+            | Error: 404
+            <br />
+            | Page Not Found
+          +image-svg('404').__image
+          +e.message
+            | The page you were looking for doesn't exist.
+            | <a href="./" class="not-found__link">Return to homepage</a> or explore
+
+    include ../../layouts/scripts

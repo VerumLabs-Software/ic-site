@@ -1,0 +1,117 @@
+.tabs {
+  font-size: 0;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 33px 65px;
+  border: 1px solid color(border);
+
+  $this: &;
+
+  @include screen(lg) {
+    padding: 29px 52px;
+  }
+
+  @include screen(md) {
+    padding: 18px 34px;
+  }
+}
+
+.tab {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 40px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+  transition: color $ease-main;
+  cursor: pointer;
+
+  $this: &;
+
+  @include screen(lg) {
+    font-size: 18px;
+    line-height: 33px;
+    padding-left: 35px;
+  }
+
+  @include screen(md) {
+    font-size: 12px;
+    line-height: 22px;
+    padding-left: 22px;
+  }
+
+  @include screen(sm) {
+    font-size: 18px;
+    line-height: 33px;
+    padding-left: 34px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 40px;
+    max-width: 25px;
+
+    @include screen(lg) {
+      max-width: 25px;
+      max-height: 33px;
+    }
+
+    @include screen(md) {
+      max-width: 14px;
+      max-height: 22px;
+    }
+
+    @include screen(sm) {
+      max-width: 21px;
+      max-height: 33px;
+    }
+  }
+
+  &:not(:first-child) {
+    margin-left: 78px;
+
+    @include screen(lg) {
+      margin-left: 53px;
+    }
+
+    @include screen(md) {
+      margin-left: 31px;
+    }
+  }
+
+  &.is-active {
+    cursor: auto;
+    color: color(primary);
+
+    .icon > * {
+      fill: color(primary);
+    }
+  }
+}
+
+.tabs-content {
+  border: 1px solid color(border);
+  border-top: none;
+
+  $this: &;
+
+  @include screen(sm) {
+    border: none;
+  }
+}
+
+.tab-wrapper {
+  display: none;
+  opacity: 0;
+  transition: opacity $ease-main;
+
+  $this: &;
+
+  &.is-active {
+    display: block;
+    opacity: 1;
+  }
+}

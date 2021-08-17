@@ -1,0 +1,120 @@
+mixin section-mobile-app()
+  +b.SECTION(data-section="").section-mobile-app#mobile-app&attributes(attributes)
+    .container
+      +e.header
+        +title Mobile app
+        +buttons-mobile-app.hide-sm
+      +tabs.__tabs.hide-sm
+        each tab in getData('mobile-app-tabs')
+          +tab(tab)
+
+      +slider(false, false)._free-tabs.js-slider-free-tabs.show-sm
+        each tab in getData('mobile-app-tabs')
+          +slide
+            +tab(tab)
+
+      +tabs-content
+        +tab-wrapper({id: "mobileAppTab1", groupId: "mobileAppTabs"}).is-active
+          //- Desktop
+          +slider(true, true)._default.js-slider.hide-sm
+            +slide
+              +image-jpg('mobile-app/camera-1')
+            +slide
+              +image-jpg('mobile-app/camera-2')
+            +slide
+              +image-jpg('mobile-app/camera-3')
+          //- Mobile
+          +slider(false, false)._free.js-slider-free.show-sm
+            +slide
+              +image-jpg('mobile-app/camera-1')
+            +slide
+              +image-jpg('mobile-app/camera-2')
+            +slide
+              +image-jpg('mobile-app/camera-3')
+        +tab-wrapper({id: "mobileAppTab2", groupId: "mobileAppTabs"})
+          //- Desktop
+          +slider(true, true)._default.js-slider.hide-sm
+            +slide
+              +grid
+                +col(4)
+                  +image-jpg('mobile-app/new-project-1_1')
+                +col(4)
+                  +image-jpg('mobile-app/new-project-1_2')
+                +col(4)
+                  +image-jpg('mobile-app/new-project-1_3')
+            +slide
+              +grid
+                +col(4)
+                  +image-jpg('mobile-app/new-project-2_1')
+                +col(4)
+                  +image-jpg('mobile-app/new-project-2_2')
+                +col(4)
+                  +image-jpg('mobile-app/new-project-2_3')
+          //- Mobile
+          +slider(false, false)._free.js-slider-free.show-sm
+            +slide
+              +grid
+                +col(6)
+                  +image-jpg('mobile-app/new-project-1_1')
+                +col(6)
+                  +image-jpg('mobile-app/new-project-1_2')
+            +slide
+              +grid
+                +col(6)
+                  +image-jpg('mobile-app/new-project-1_3')
+                +col(6)
+                  +image-jpg('mobile-app/new-project-2_1')
+            +slide
+              +grid
+                +col(6)
+                  +image-jpg('mobile-app/new-project-2_2')
+                +col(6)
+                  +image-jpg('mobile-app/new-project-2_3')
+        +tab-wrapper({id: "mobileAppTab3", groupId: "mobileAppTabs"})
+          //- Desktop
+          +slider(false, false)._default.js-slider.hide-sm
+            +slide
+              +grid
+                +col(6)
+                  +image-jpg('mobile-app/profile-1_1')(style="margin-left: auto")
+                +col(6)
+                  +image-jpg('mobile-app/profile-1_2')
+          //- Mobile
+          +slider(false, false)._free.js-slider-free.show-sm
+            +slide
+              +grid
+                +col(6)
+                  +image-jpg('mobile-app/profile-1_1')
+                +col(6)
+                  +image-jpg('mobile-app/profile-1_2')
+        +tab-wrapper({id: "mobileAppTab4", groupId: "mobileAppTabs"})
+          //- Desktop
+          +slider(false, false)._default.js-slider.hide-sm
+            +slide
+              +grid
+                +col(4)
+                  +image-jpg('mobile-app/finished-project-1_1')
+                +col(4)
+                  +image-jpg('mobile-app/finished-project-1_2')
+                +col(4)
+                  +image-jpg('mobile-app/finished-project-1_3')
+          //- Mobile
+          +slider(false, false)._free.js-slider-free.show-sm
+            +slide
+              +grid
+                +col(6)
+                  +image-jpg('mobile-app/finished-project-1_1')
+                +col(6)
+                  +image-jpg('mobile-app/finished-project-1_2')
+            +slide
+              +grid
+                +col(6)
+                  +image-jpg('mobile-app/finished-project-1_3')
+      +buttons-mobile-app.show-sm
+
+mixin buttons-mobile-app()
+  +e.buttons&attributes(attributes)
+    +button._dark._app-store.__button
+      +image-svg('app-store')
+    +button._dark._google-play.__button
+      +image-svg('google-play')

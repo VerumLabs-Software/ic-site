@@ -1,0 +1,28 @@
+//- Example
+//- +tabs-cards
+  //- +tab-card()(data-tab-target="tab1").is-active Информация
+  //- +tab-card()(data-tab-target="tab2") Контент
+  //- +tab-card()(data-tab-target="tab3") Тексты
+
+//- +tab-cards-content
+  //- +tab-cards-wrapper()(data-tab="tab1" data-tab-group="testTabs").is-active Это таб 1
+  //- +tab-cards-wrapper()(data-tab="tab2" data-tab-group="testTabs") Это таб 2
+  //- +tab-cards-wrapper()(data-tab="tab3" data-tab-group="testTabs") Это таб 3
+
+mixin tab-cards()
+  +b.tab-cards&attributes(attributes)
+    block
+
+mixin tab-card({icon, title, id, groupId, description, defaultActive})
+  +b.tab-card(data-tab-target=id, data-tab-target-group=groupId class=`${defaultActive ? 'is-active' : ''}`)&attributes(attributes)
+    +icon(icon).__icon
+    +title('h4').__title!=title
+    +text._sm.__description!=description
+
+mixin tab-cards-content()
+  +b.tab-cards-content&attributes(attributes)
+    block
+
+mixin tab-cards-wrapper({id, groupId, defaultActive})
+  +b.tab-cards-wrapper(data-tab=id, data-tab-group=groupId, class=`${defaultActive ? 'is-active' : ''}`)&attributes(attributes)
+    block

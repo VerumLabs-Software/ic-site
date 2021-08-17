@@ -1,0 +1,65 @@
+$popupZindex: 1000;
+
+.popup {
+  position: fixed;
+  z-index: $popupZindex;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility $ease-main, opacity $ease-main;
+
+  $this: &;
+
+  .input {
+    width: 100%;
+    display: block;
+  }
+
+  .inputbox {
+    &_light {
+      .iti {
+        width: 100%;
+      }
+
+      .input {
+        border-right: 1px solid color(gray);
+        width: 100% !important;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .button {
+    margin-top: 21px;
+    display: block;
+  }
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__overlay {
+    position: absolute;
+    z-index: $popupZindex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(color(black), 0.63);
+    cursor: pointer;
+  }
+
+  &__wrapper {
+    @include center-block;
+    z-index: $popupZindex + 1;
+    width: 100%;
+    max-width: 260px;
+    padding: 48px 18px;
+    border-radius: radius(md);
+    background-color: color(light);
+  }
+}

@@ -1,0 +1,19 @@
+mixin info-card({title, subtitle})
+  +b.info-card&attributes(attributes)
+    +title('h3')._gray.__title!=title
+    +e.subtitle!=subtitle
+    +text._sm.__description
+      block
+
+//- Card examples
+mixin info-card-who()
+  +info-card({title: 'Who', subtitle: 'Realtors,<br>photographers, &<br>business owners'}) LPGgo App is the best  tool for anyone trying to showcase their property with professional quality photo & video.
+
+mixin info-card-where()
+  +info-card({title: 'Where', subtitle: 'Your smarhphone'}) Shoot like a pro anywhere in the world from your Android<br>or iPhone device.
+
+mixin info-card-why()
+  +info-card({title: 'Why', subtitle: 'Fast<br>Easy<br>Affordable'}) Professional content is expensive.  Why not learn how to shoot like a pro in minutes, send off to us for editing & receive your high quality media back in  24 hours.  Save thousands with LPGgo.
+
+mixin info-card-what()
+  +info-card({title: 'What', subtitle: 'High quality video & photos<br>for residential & business properties'}) Create captivating content for any property.<br>Residential & commercial real estate<br>or even your business.

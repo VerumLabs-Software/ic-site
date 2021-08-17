@@ -1,0 +1,15 @@
+mixin section-socials()
+  +b.SECTION.section-socials&attributes(attributes)
+    .container
+      +title Connect with us
+      +text._sm.__description Stay inspired & subscribe to LPGgo on social media
+      +grid.__cards
+        +col(4)
+          +social-card('instagram-gradient', 'https://www.instagram.com/lifestyle_production_group').hide-sm Our Photos
+          +social-card-mobile('instagram', 'https://www.instagram.com/lifestyle_production_group')._instagram.show-sm Our Photos
+        +col(4)
+          +social-card('youtube', 'https://www.youtube.com/channel/UCb2Eih9phmpl2NDn4orWrdg')._youtube.hide-sm Our Videos
+          +social-card-mobile('youtube', 'https://www.youtube.com/channel/UCb2Eih9phmpl2NDn4orWrdg')._youtube.show-sm Our Videos
+        +col(4)
+          +social-card('facebook', 'https://www.facebook.com/lifestyleproductiongroup')._facebook.hide-sm Our News
+          +social-card-mobile('facebook', 'https://www.facebook.com/lifestyleproductiongroup')._facebook.show-sm Our News

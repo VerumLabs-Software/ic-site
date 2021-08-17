@@ -1,0 +1,133 @@
+.section-how-it-works {
+  padding-top: 85px;
+  padding-bottom: 85px;
+
+  $this: &;
+
+  @include screen(lg) {
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+
+  @include screen(md) {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  @include screen(sm) {
+    padding-top: 53px;
+    padding-bottom: 53px;
+    background-color: color(section-gray);
+  }
+
+  .tab-card {
+    &::before {
+      content: "";
+      position: absolute;
+      left: -215px;
+      @include size(215px);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0;
+      transition: opacity $ease-main;
+
+      @include screen(lg) {
+        left: -178px;
+        @include size(178px);
+      }
+
+      @include screen(md) {
+        left: -150px;
+        @include size(150px);
+      }
+
+      @include screen(sm) {
+        display: none;
+      }
+    }
+
+    &[data-tab-target="howItWorksTab1"].is-active::before {
+      top: 10px;
+      background-image: url("../../assets/images/how-it-works/line-1.svg");
+
+      @include screen(lg) {
+        top: 10px;
+      }
+    }
+
+    &[data-tab-target="howItWorksTab2"].is-active::before {
+      top: 27px;
+      background-image: url("../../assets/images/how-it-works/line-2.svg");
+    }
+
+    &[data-tab-target="howItWorksTab3"].is-active::before {
+      top: -2px;
+      background-image: url("../../assets/images/how-it-works/line-3.svg");
+    }
+
+    &.is-active::before {
+      opacity: 1;
+    }
+  }
+
+  .tab-cards-wrapper {
+    .video {
+      position: relative;
+      z-index: 1;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 30px 40px rgba(color(black), 0.15);
+    }
+
+    &[data-tab="howItWorksTab1"] .video {
+      max-width: 536px;
+
+      @include screen(lg) {
+        max-width: 454px;
+      }
+
+      @include screen(md) {
+        max-width: 298px;
+      }
+
+      @include screen(sm) {
+        max-width: 500px;
+      }
+    }
+
+    &[data-tab="howItWorksTab2"] .video,
+    &[data-tab="howItWorksTab3"] .video {
+      max-width: 253px;
+
+      @include screen(lg) {
+        max-width: 210px;
+      }
+
+      @include screen(md) {
+        max-width: 170px;
+      }
+
+      @include screen(sm) {
+        max-width: 221px;
+      }
+    }
+  }
+
+  &__grid {
+    margin-top: 34px;
+    align-items: center;
+
+    @include screen(lg) {
+      margin-top: 23px;
+    }
+  }
+
+  &__slider {
+    margin-top: 57px;
+  }
+
+  &__tabs-content {
+    margin-top: 50px;
+  }
+}

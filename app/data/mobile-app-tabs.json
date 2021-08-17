@@ -1,0 +1,27 @@
+[
+  {
+    "id": "mobileAppTab1",
+    "groupId": "mobileAppTabs",
+    "icon": "plan",
+    "text": "Camera",
+    "defaultActive": true
+  },
+  {
+    "id": "mobileAppTab2",
+    "groupId": "mobileAppTabs",
+    "icon": "check-list",
+    "text": "Create new project"
+  },
+  {
+    "id": "mobileAppTab3",
+    "groupId": "mobileAppTabs",
+    "icon": "house",
+    "text": "Client information"
+  },
+  {
+    "id": "mobileAppTab4",
+    "groupId": "mobileAppTabs",
+    "icon": "plaque",
+    "text": "Finished project"
+  }
+]

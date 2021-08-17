@@ -1,0 +1,28 @@
+//- Example
+//- +slider(true, true).js-slider
+//-   +slide Привет
+//-   +slide Привет
+//-   +slide Привет
+//-   +slide Привет
+
+mixin slider(pagination, buttons)
+  +b.slider&attributes(attributes)
+    .swiper-container.js-slider-container
+      .swiper-wrapper
+        block
+
+    if pagination
+      +e.dots.swiper-dots.js-slider-dots
+        +e.dot
+
+    if buttons
+      +e.navigation.swiper-navigation
+        +e.button.js-slider-button-prev
+          +icon('arrow-left')
+
+        +e.button.js-slider-button-next
+          +icon('arrow-right')
+
+mixin slide()
+  +e.slide&attributes(attributes).swiper-slide
+    block

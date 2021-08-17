@@ -1,0 +1,21 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = ' | Privacy policy'
+
+block content
+  body.privacy-page
+    +fixed-header('navigation-reverse').hide-sm
+    +menu('privacy-navigation').show-sm
+
+    main
+      +section-privacy
+
+    +footer('privacy-navigation')
+
+    +popup('country-code')
+      +inputbox._lg._light
+        +input(data-mask="tel", type="tel")._lg._light
+      +button._primary._xl Send me invite
+
+    include ../../layouts/scripts

@@ -1,0 +1,133 @@
+.section-clients {
+  padding-top: 85px;
+  padding-bottom: 85px;
+
+  $this: &;
+
+  @include screen(lg) {
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+
+  @include screen(md) {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  @include screen(sm) {
+    padding-top: 53px;
+    padding-bottom: 53px;
+    background-color: color(section-gray);
+  }
+
+  &__slider {
+    @include screen(sm) {
+      margin-top: 53px;
+    }
+
+    .swiper-navigation {
+      transform: translateY(-200%);
+
+      @include screen(md) {
+        transform: translateY(-150%);
+      }
+    }
+
+    .swiper-slide {
+      padding: 50px 74px;
+
+      @include screen(lg) {
+        padding: 50px;
+      }
+
+      @include screen(sm) {
+        padding: 0;
+      }
+    }
+  }
+
+  .client-block {
+    &[data-type="client-1"] {
+      .client-block__logo img {
+        height: 26px;
+
+        @include screen(lg) {
+          height: 21px;
+        }
+
+        @include screen(md) {
+          height: 16px;
+        }
+
+        @include screen(sm) {
+          height: 31px;
+        }
+      }
+    }
+
+    &[data-type="client-2"] {
+      .client-block {
+        &__description a {
+          color: color(primary);
+
+          &:hover {
+            color: darken(color(primary), 8%);
+          }
+        }
+
+        &__logo img {
+          height: 36px;
+
+          @include screen(lg) {
+            height: 30px;
+          }
+
+          @include screen(md) {
+            height: 23px;
+          }
+
+          @include screen(sm) {
+            height: 35px;
+          }
+        }
+      }
+    }
+
+    &[data-type="client-3"] {
+      .client-block__logo img {
+        height: 18px;
+
+        @include screen(lg) {
+          height: 24px;
+        }
+
+        @include screen(md) {
+          height: 15px;
+        }
+
+        @include screen(sm) {
+          height: 25px;
+        }
+      }
+    }
+  }
+
+  &__description {
+    margin-top: 33px;
+
+    @include screen(lg) {
+      margin-top: 22px;
+      line-height: 26px;
+    }
+
+    @include screen(md) {
+      margin-top: 14px;
+      line-height: 20px;
+    }
+
+    @include screen(sm) {
+      margin-top: 17px;
+      line-height: 22px;
+    }
+  }
+}

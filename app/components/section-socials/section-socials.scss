@@ -1,0 +1,50 @@
+.section-socials {
+  padding-top: 85px;
+  padding-bottom: 90px;
+
+  $this: &;
+
+  @include screen(lg) {
+    padding-top: 68px;
+    padding-bottom: 75px;
+  }
+
+  @include screen(md) {
+    padding-top: 42px;
+    padding-bottom: 59px;
+  }
+
+  @include screen(sm) {
+    padding-top: 53px;
+    padding-bottom: 51px;
+    background-color: color(section-gray);
+  }
+
+  &__cards {
+    margin-top: 13px;
+
+    @include screen(lg) {
+      margin-top: 4px;
+    }
+
+    @include screen(sm) {
+      margin-top: 7px;
+    }
+  }
+
+  &__description {
+    margin-top: 32px;
+
+    @include screen(lg) {
+      margin-top: 22px;
+    }
+
+    @include screen(md) {
+      margin-top: 12px;
+    }
+
+    @include screen(sm) {
+      margin-top: 15px;
+    }
+  }
+}

@@ -1,0 +1,216 @@
+.section-empowering {
+  padding-top: 90px;
+  padding-bottom: 85px;
+
+  $this: &;
+
+  @include screen(lg) {
+    padding-top: 75px;
+    padding-bottom: 68px;
+  }
+
+  @include screen(md) {
+    padding-top: 59px;
+    padding-bottom: 42px;
+  }
+
+  @include screen(sm) {
+    padding-top: 51px;
+    padding-bottom: 53px;
+  }
+
+  &__features {
+    position: relative;
+    margin-top: -56px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 609px;
+
+    @include screen(lg) {
+      margin-top: -46px;
+      max-width: 497px;
+    }
+
+    @include screen(md) {
+      margin-top: -46px;
+      max-width: 365px;
+    }
+
+    @include screen(sm) {
+      margin-top: 0;
+      max-width: 100%;
+    }
+  }
+
+  &__row {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    > * {
+      width: 50%;
+
+      @include screen(sm) {
+        width: 100%;
+      }
+    }
+
+    @include screen(lg) {
+      max-width: 925px;
+    }
+
+    @include screen(sm) {
+      display: block;
+    }
+  }
+
+  &__video {
+    overflow: hidden;
+    border-radius: radius(sm);
+    background-color: color(black);
+    margin-left: 58px;
+
+    video {
+      @include size(100%);
+    }
+
+    @include screen(lg) {
+      margin-left: 20px;
+    }
+
+    @include screen(md) {
+      margin-left: 30px;
+    }
+
+    @include screen(sm) {
+      margin-left: 0;
+      height: 210px;
+    }
+  }
+
+  &__info {
+    padding-top: 64px;
+    padding-bottom: 90px;
+
+    @include screen(lg) {
+      padding-top: 53px;
+      padding-bottom: 190px;
+    }
+
+    @include screen(md) {
+      padding-top: 18px;
+      padding-bottom: 82px;
+    }
+
+    @include screen(sm) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__description {
+    margin-top: 29px;
+
+    @include screen(lg) {
+      margin-top: 22px;
+    }
+
+    @include screen(md) {
+      margin-top: 32px;
+    }
+
+    @include screen(sm) {
+      margin-top: 20px;
+    }
+
+    strong {
+      font-weight: 500;
+    }
+  }
+}
+
+.features-empowering {
+  width: 100%;
+  padding: 36px 50px 5px 147px;
+  background-color: color(light);
+
+  $this: &;
+
+  @include screen(lg) {
+    padding: 32px 50px 5px 122px;
+  }
+
+  @include screen(md) {
+    padding: 20px 20px 5px 86px;
+  }
+
+  @include screen(sm) {
+    padding: 34px 0 35px 79px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 43px;
+    left: 0;
+    @include size(100px, max);
+
+    > * {
+      fill: color(primary);
+    }
+
+    @include screen(lg) {
+      top: 36px;
+      @include size(83px, max);
+    }
+
+    @include screen(md) {
+      top: 26px;
+      @include size(58px, max);
+    }
+
+    @include screen(sm) {
+      top: 35px;
+      @include size(50px, max);
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 50px;
+    font-weight: 500;
+
+    @include screen(lg) {
+      font-size: 38px;
+      line-height: 37px;
+    }
+
+    @include screen(md) {
+      font-size: 28px;
+      line-height: 33px;
+    }
+
+    @include screen(sm) {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+
+  &__accent {
+    font-size: 64px;
+    color: color(primary);
+
+    @include screen(lg) {
+      font-size: 54px;
+    }
+
+    @include screen(md) {
+      font-size: 37px;
+    }
+
+    @include screen(sm) {
+      font-size: 24px;
+    }
+  }
+}

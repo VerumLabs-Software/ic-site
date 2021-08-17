@@ -1,0 +1,48 @@
+.not-found {
+  &__wrapper {
+    position: absolute;
+    @include size(100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    box-sizing: border-box;
+    background-color: color(light);
+
+    &.is-active {
+      justify-content: flex-start;
+    }
+  }
+
+  &__link {
+    color: color(primary);
+  }
+
+  &__content {
+    position: relative;
+    padding: 20px 0;
+    max-width: 360px;
+    text-align: center;
+  }
+
+  &__image {
+    max-width: 272px;
+    margin: 33px auto 97px;
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 44px;
+  }
+
+  &__message {
+    line-height: 22px;
+  }
+}

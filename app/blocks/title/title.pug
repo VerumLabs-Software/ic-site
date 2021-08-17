@@ -1,0 +1,4 @@
+mixin title(tag)
+  +b.title&attributes(attributes)
+    #{tag || 'h2'}
+      block

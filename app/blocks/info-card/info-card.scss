@@ -1,0 +1,73 @@
+.info-card {
+  padding: 37px 50px 50px;
+  background-color: color(light-gray);
+
+  $this: &;
+
+  @include screen(lg) {
+    padding: 42px 50px 50px 43px;
+  }
+
+  @include screen(md) {
+    padding: 31px;
+  }
+
+  @include screen(sm) {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  &:hover {
+    #{$this}__title {
+      color: color(dark);
+    }
+
+    #{$this}__subtitle {
+      color: color(primary);
+    }
+  }
+
+  &__subtitle {
+    margin-top: 27px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 38px;
+    transition: color $ease-main;
+
+    @include screen(lg) {
+      margin-top: 40px;
+      font-size: 22px;
+      line-height: 32px;
+    }
+
+    @include screen(md) {
+      margin-top: 23px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @include screen(sm) {
+      margin-top: 15px;
+      font-size: 24px;
+      line-height: 33px;
+    }
+  }
+
+  &__description.text {
+    margin-top: 23px;
+
+    @include screen(lg) {
+      margin-top: 20px;
+    }
+
+    @include screen(md) {
+      margin-top: 12px;
+      line-height: 18px;
+    }
+
+    @include screen(sm) {
+      margin-top: 9px;
+      line-height: 22px;
+    }
+  }
+}

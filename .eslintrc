@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "prettier", "plugin:prettier/recommended"],
+  "plugins": ["babel", "prettier"],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "no-underscore-dangle": 0,
+    "no-prototype-builtins": ["off"],
+    "no-useless-escape": ["off"]
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  }
+}

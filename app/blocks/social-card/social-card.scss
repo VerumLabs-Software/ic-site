@@ -1,0 +1,111 @@
+.social-card {
+  padding: 78px 30px 75px;
+  border-radius: radius(sm);
+  background-color: color(light);
+  box-shadow: 0 40px 50px rgba(0, 0, 0, 0.04);
+
+  $this: &;
+
+  @include screen(lg) {
+    padding: 65px 30px 62px;
+  }
+
+  @include screen(md) {
+    padding: 46px 30px;
+  }
+
+  @include screen(sm) {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &_youtube > * {
+    fill: color(red);
+  }
+
+  &_facebook > * {
+    fill: color(blue);
+  }
+
+  &_instagram > *,
+  &_youtube > *,
+  &_facebook > * {
+    @include screen(sm) {
+      fill: color(black);
+    }
+  }
+
+  &__button {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 66px;
+
+    @include screen(lg) {
+      margin-top: 15px;
+      max-width: 70px;
+    }
+
+    @include screen(md) {
+      margin-top: 11px;
+      max-width: 49px;
+    }
+  }
+
+  &__icon {
+    @include size(45px, max);
+    margin-left: auto;
+    margin-right: auto;
+
+    @include screen(lg) {
+      @include size(38px, max);
+    }
+
+    @include screen(md) {
+      @include size(27px, max);
+    }
+  }
+
+  &__text,
+  &__link {
+    display: block;
+    margin-top: 22px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+
+    @include screen(lg) {
+      margin-top: 18px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    @include screen(md) {
+      margin-top: 14px;
+      font-size: 9px;
+      line-height: 12px;
+    }
+
+    @include screen(sm) {
+      margin-top: 21px;
+      font-size: 14px;
+      line-height: 18px;
+      color: color(primary);
+    }
+  }
+
+  &__link {
+    color: color(primary);
+  }
+
+  &__content {
+    text-align: center;
+    max-width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include screen(sm) {
+      max-width: 100%;
+    }
+  }
+}

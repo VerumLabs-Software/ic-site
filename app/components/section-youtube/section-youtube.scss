@@ -1,0 +1,37 @@
+.section-youtube {
+  padding-top: 85px;
+  padding-bottom: 85px;
+
+  $this: &;
+
+  @include screen(lg) {
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+
+  @include screen(md) {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  @include screen(sm) {
+    padding-top: 53px;
+    padding-bottom: 53px;
+  }
+
+  &__slider {
+    margin-top: 58px;
+
+    @include screen(lg) {
+      margin-top: 44px;
+    }
+
+    @include screen(md) {
+      margin-top: 25px;
+    }
+
+    @include screen(sm) {
+      margin-top: 16px;
+    }
+  }
+}

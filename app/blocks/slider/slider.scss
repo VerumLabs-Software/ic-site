@@ -1,0 +1,124 @@
+@import "../../node_modules/swiper/css/swiper.css";
+
+.slider {
+  position: relative;
+
+  &.js-slider-free,
+  &.js-slider-free-tabs {
+    .swiper-container {
+      overflow: initial;
+    }
+  }
+
+  &__slide {
+    box-sizing: border-box;
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: 53px;
+    left: 0;
+    right: 0;
+    padding: 0 30px;
+    text-align: center;
+    pointer-events: none;
+    box-sizing: border-box;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include screen(md) {
+      bottom: 28px;
+    }
+  }
+
+  &__dot {
+    margin: 4px;
+    @include size(10px);
+    border-radius: 9999px;
+    display: inline-block;
+    position: relative;
+    will-change: width;
+    background-color: rgba(color(gray-300), 0.6);
+    transition: width $ease-main, background-color $ease-main;
+    pointer-events: all;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    @include screen(md) {
+      margin: 2px;
+      @include size(6px);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+    }
+
+    &:hover {
+      background-color: color(gray-300);
+    }
+
+    &.is-active {
+      width: 16px;
+      background-color: color(primary);
+
+      @include screen(md) {
+        width: 9px;
+      }
+
+      &:hover {
+        background-color: color(primary);
+      }
+    }
+  }
+
+  &__navigation {
+    @include center-block(vertical);
+    z-index: 1;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  &__button {
+    position: relative;
+    z-index: 1;
+    @include size(40px);
+    box-sizing: border-box;
+    border: 1px solid color(border);
+    border-radius: 50%;
+    pointer-events: all;
+    fill: color(dark);
+    transition: fill $ease-main;
+    cursor: pointer;
+
+    @include screen(lg) {
+      @include size(33px);
+    }
+
+    @include screen(md) {
+      @include size(25px);
+    }
+
+    svg {
+      @include size(60%);
+      @include center-image;
+      left: 3px;
+    }
+
+    &:hover {
+      fill: color(primary);
+    }
+  }
+}

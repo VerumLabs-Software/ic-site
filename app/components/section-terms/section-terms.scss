@@ -1,0 +1,73 @@
+.section-terms {
+  padding-top: 90px;
+  padding-bottom: 90px;
+
+  $this: &;
+
+  ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+
+  li {
+    padding-left: 20px;
+  }
+
+  @include screen(lg) {
+    padding-top: 75px;
+    padding-bottom: 68px;
+  }
+
+  @include screen(md) {
+    padding-top: 59px;
+    padding-bottom: 42px;
+  }
+
+  @include screen(sm) {
+    padding-top: 51px;
+    padding-bottom: 53px;
+  }
+
+  &__info {
+    margin-top: 30px;
+
+    @include screen(sm) {
+      margin-top: 11px;
+    }
+
+    > ul > *:not(:first-child),
+    > ol > *:not(:first-child),
+    > *:not(:first-child) {
+      margin-top: 30px;
+
+      @include screen(sm) {
+        margin-top: 21px;
+      }
+    }
+  }
+
+  &__title.title h1 {
+    @include screen(sm) {
+      margin-top: 26px;
+      font-size: 28px;
+      line-height: 40px;
+    }
+  }
+
+  &__description,
+  ul,
+  ol {
+    font-size: 18px;
+    line-height: 33px;
+
+    @include screen(lg) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include screen(md) {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}

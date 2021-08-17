@@ -1,0 +1,215 @@
+.header {
+  position: relative;
+  padding-top: 43px;
+  padding-bottom: 247px;
+  background-color: color(dark);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  $this: &;
+
+  .webp & {
+    background-image: url("../../assets/images/about/bg.webp");
+
+    @include screen(sm) {
+      background-image: url("../../assets/images/about/mobile-bg.webp");
+    }
+  }
+
+  .no-webp & {
+    background-image: url("../../assets/images/about/bg.jpg");
+
+    @include screen(sm) {
+      background-image: url("../../assets/images/about/mobile-bg.jpg");
+    }
+  }
+
+  @include screen(lg) {
+    padding-top: 35px;
+    padding-bottom: 204px;
+  }
+
+  @include screen(md) {
+    padding-top: 43px;
+    padding-bottom: 84px;
+  }
+
+  @include screen(sm) {
+    padding-top: 46px;
+    padding-bottom: 50px;
+    background-position: 50% 20%;
+  }
+
+  @include screen(xs) {
+    background-position: 100%;
+  }
+
+  &__list > li:first-child > a {
+    font-weight: 800;
+    color: color(light);
+
+    &:focus,
+    &:hover {
+      color: color(primary);
+    }
+  }
+
+  &__form {
+    margin-top: 70px;
+    max-width: 460px;
+
+    @include screen(lg) {
+      margin-top: 52px;
+      max-width: 390px;
+    }
+
+    @include screen(md) {
+      margin-top: 46px;
+      max-width: 310px;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+    max-width: 122px;
+
+    @include screen(lg) {
+      max-width: 101px;
+    }
+
+    @include screen(md) {
+      max-width: 67px;
+    }
+
+    @include screen(sm) {
+      margin-top: 34px;
+      max-width: 77px;
+    }
+  }
+
+  &__content {
+    margin-top: 119px;
+
+    @include screen(lg) {
+      margin-top: 96px;
+    }
+
+    @include screen(md) {
+      margin-top: 49px;
+    }
+
+    @include screen(sm) {
+      margin-top: 0;
+    }
+  }
+
+  &__text-content {
+    width: 100%;
+    max-width: 542px;
+
+    @include screen(lg) {
+      max-width: 400px;
+    }
+
+    @include screen(md) {
+      max-width: 325px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    margin-top: 75px;
+
+    > * {
+      width: 100%;
+
+      &:not(:first-child) {
+        margin-left: 17px;
+      }
+    }
+  }
+
+  &__title.title h1 {
+    margin-top: 40px;
+
+    @include screen(xl) {
+      margin-top: 34px;
+      max-width: 600px;
+    }
+
+    @include screen(md) {
+      margin-top: 34px;
+    }
+
+    @include screen(sm) {
+      font-weight: 300;
+      margin-top: 50px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 243px;
+    right: 0;
+    max-width: 687px;
+
+    @include screen(xl) {
+      max-width: 600px;
+    }
+
+    @include screen(lg) {
+      bottom: 208px;
+      max-width: 582px;
+    }
+
+    @include screen(md) {
+      bottom: 105px;
+      max-width: 425px;
+    }
+  }
+}
+
+.fixed-header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  box-shadow: 0 4px 50px rgba(color(black), 0.08);
+  background-color: rgba(color(light), 0.96);
+  transform: translateY(-100%);
+  transition: transform $ease-main;
+
+  $this: &;
+
+  &.is-active {
+    transform: translateY(0);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    > *:not(:first-child) {
+      margin-left: 88px;
+
+      @include screen(md) {
+        margin-left: 58px;
+      }
+    }
+  }
+
+  &__logo {
+    @include size(44px, max);
+
+    @include screen(lg) {
+      @include size(40px, max);
+    }
+
+    @include screen(md) {
+      @include size(34px, max);
+    }
+  }
+}

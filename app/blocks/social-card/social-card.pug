@@ -1,0 +1,20 @@
+mixin social-card(icon, href)
+  +b.social-card&attributes(attributes)
+    +e.content
+      if (icon === 'instagram-gradient')
+        +instagram-gradient-icon.__icon
+      else
+        +icon(icon).__icon
+      +e.text
+        block
+      +button()(href=href, target="_blank")._md._transparent.__button Follow
+
+mixin social-card-mobile(icon, href)
+  +b.social-card&attributes(attributes)
+    +e.content
+      if (icon === 'instagram-gradient')
+        +instagram-gradient-icon.__icon
+      else
+        +icon(icon).__icon
+      +e.A(href=href, target="_blank").link
+        block

@@ -1,0 +1,6 @@
+mixin menu(json)
+  +b.menu.js-menu.js-nav&attributes(attributes)
+    +e.BUTTON(type="button").close.js-menu-close
+      +icon('close').__close-icon
+    +e.NAV.nav
+      +list(getData(json))._md._dark.__list

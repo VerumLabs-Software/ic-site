@@ -1,0 +1,147 @@
+.footer {
+  height: 100%;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: color(dark);
+
+  $this: &;
+
+  @include screen(lg) {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  @include screen(md) {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  @include screen(sm) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    > *:not(:first-child) {
+      margin-left: 40px;
+    }
+  }
+
+  &__buttons > *:not(:first-child) {
+    margin-top: 18px;
+
+    @include screen(lg) {
+      margin-top: 14px;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 144px;
+    border: 1px solid rgba(color(light), 0.4);
+    height: 41px;
+
+    @include screen(lg) {
+      width: 120px;
+      height: 34px;
+    }
+
+    @include screen(sm) {
+      width: 136px;
+      height: 36px;
+    }
+
+    @include screen(xs) {
+      width: 100px;
+    }
+
+    &.button_app-store .image {
+      width: 69%;
+    }
+
+    &.button_google-play .image {
+      width: 80%;
+    }
+  }
+
+  &__main-top {
+    display: flex;
+    align-items: center;
+
+    @include screen(sm) {
+      display: block;
+
+      .button {
+        width: 100%;
+        max-width: 123px;
+      }
+    }
+
+    @include screen(xs) {
+      .button {
+        width: 100%;
+        max-width: 90px;
+      }
+    }
+
+    & > *:not(:first-child) {
+      margin-left: 51px;
+
+      @include screen(lg) {
+        margin-left: 42px;
+      }
+
+      @include screen(sm) {
+        margin-top: 15px;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: 33px;
+    color: color(light);
+
+    @include screen(lg) {
+      margin-top: 24px;
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    @include screen(sm) {
+      margin-top: 30px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  &__list {
+    margin-top: 30px;
+
+    @include screen(lg) {
+      margin-top: 24px;
+    }
+
+    @include screen(sm) {
+      margin-top: 19px;
+    }
+  }
+
+  &__inputbox {
+    max-width: 380px;
+
+    @include screen(lg) {
+      max-width: 310px;
+    }
+  }
+
+  &__logo {
+    @include size(44px, max);
+
+    @include screen(lg) {
+      @include size(37px, max);
+    }
+  }
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "href": "./#about",
+    "name": "About",
+    "external": true
+  },
+  {
+    "href": "./#how-it-works",
+    "name": "How it works?",
+    "external": true
+  },
+  {
+    "href": "./#achivements",
+    "name": "Main Features",
+    "external": true
+  },
+  {
+    "href": "./#mobile-app",
+    "name": "Mobile app",
+    "external": true
+  },
+  {
+    "href": "./#clients",
+    "name": "Clients",
+    "external": true
+  },
+  {
+    "href": "./#join-us",
+    "name": "Join us",
+    "external": true
+  },
+  {
+    "href": "#privacy",
+    "name": "Privacy policy"
+  },
+  {
+    "href": "./terms.html",
+    "name": "Terms of Use",
+    "external": true
+  }
+]

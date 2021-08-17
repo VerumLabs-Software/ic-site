@@ -1,0 +1,28 @@
+@import "../../node_modules/normalize.css/normalize.css";
+@import "helpers/functions"; // Функции
+@import "helpers/mixins"; // Миксины
+@import "helpers/variables"; // Переменные
+@import "helpers/fonts"; // Шрифты
+@import "helpers/basics"; // Основные общие стили
+@import "helpers/text-styles"; // Стили текстов
+@import "../blocks/**/*";
+@import "../components/**/*";
+@import "../pages/**/*";
+
+.js-sr {
+  visibility: hidden;
+}
+
+@each $key, $val in $breakpoints {
+  .hide-#{$key} {
+    @include screen(#{$key}) {
+      display: none;
+    }
+  }
+
+  .show-#{$key} {
+    @include screen(#{$key}, min) {
+      display: none;
+    }
+  }
+}

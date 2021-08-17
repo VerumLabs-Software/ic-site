@@ -1,0 +1,26 @@
+[
+  {
+    "logo": "clients/logo-1",
+    "avatar": "clients/avatar-1",
+    "name": "Oren Alexander",
+    "job": "#1 Team at Douglas Elliman",
+    "type": "client-1",
+    "description": "Been with LPG since day 1. They are the best in the business and I expect nothing less from LPGgo."
+  },
+  {
+    "logo": "clients/logo-2",
+    "avatar": "clients/avatar-2",
+    "name": "Nelson Gonzalez",
+    "job": "#1 Agent at EWM",
+    "type": "client-2",
+    "description": "The team behind LPGgo is the most talented group of real estate videographers in the country. We are already finding ways to incorporate LPGgo into our workflow."
+  },
+  {
+    "logo": "clients/logo-3",
+    "avatar": "clients/avatar-3",
+    "name": "Jill Hertzberg",
+    "job": "#1 Team in Coldwell Banker",
+    "type": "client-3",
+    "description": "Most of all, we are captivated by an integrated and responsible approach to the client, a balanced pricing policy and honesty. We express our sincere gratitude for the fruitful cooperation for a long time, the provision of excellent quality services."
+  }
+]

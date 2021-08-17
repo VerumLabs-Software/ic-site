@@ -1,0 +1,19 @@
+mixin section-empowering()
+  +b.SECTION.section-empowering&attributes(attributes)
+    .container
+      +e.row
+        +e.info
+          +title Empowering
+          +text._lg.__description LPGgo empowers you to capture professional quality photos & videos from your smartphone in minutes, then send off your content to be perfected by our creative editors within 24 hours. <strong>It’s that easy</strong>.
+        +features-empowering.__features.show-sm
+        +video-link.__video
+          source(src='https://d33ui1uococ212.cloudfront.net/static/landing/video.webm', type='video/webm')
+          source(src='https://d33ui1uococ212.cloudfront.net/static/landing/43+Howard+Street+Sag+Harbor+NY+MLS.mp4', type='video/mp4')
+      +features-empowering.__features.hide-sm
+
+mixin features-empowering()
+  +b.features-empowering&attributes(attributes)
+    +icon('flick').__icon.js-icon-empowering
+    +e.info
+      +e.title Captivating content that is
+      +e.accent.js-typewriter-empowering easy

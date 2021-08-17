@@ -1,0 +1,190 @@
+$offset-sm: 4px;
+$offset-sm_lg: 25px;
+
+$offset-md: 14px;
+$offset-md_lg: 12px;
+$offset-md_md: 4px;
+$offset-md_sm: 12px;
+
+$offset-lg: 25px;
+$offset-lg_sm: 12px;
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+
+  $this: &;
+
+  &_sm {
+    margin-top: -#{$offset-sm};
+    margin-left: -#{$offset-sm};
+
+    @include screen(lg) {
+      margin-top: -#{$offset-sm_lg};
+      margin-left: -#{$offset-sm_lg};
+    }
+
+    @include screen(md) {
+      margin-top: -#{$offset-sm};
+      margin-left: -#{$offset-sm};
+    }
+
+    & > * {
+      margin-top: $offset-sm;
+      margin-left: $offset-sm;
+
+      @include screen(lg) {
+        margin-top: $offset-sm_lg;
+        margin-left: $offset-sm_lg;
+      }
+
+      @include screen(md) {
+        margin-top: $offset-sm;
+        margin-left: $offset-sm;
+      }
+    }
+
+    #{$this}__link {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &_md {
+    margin-top: -#{$offset-md};
+    margin-left: -#{$offset-md};
+
+    @include screen(lg) {
+      margin-top: -#{$offset-md_lg};
+      margin-left: -#{$offset-md_lg};
+    }
+
+    @include screen(md) {
+      margin-top: -#{$offset-md_md};
+      margin-left: -#{$offset-md_md};
+    }
+
+    @include screen(sm) {
+      margin-top: -#{$offset-md_sm};
+      margin-left: -#{$offset-md_sm};
+    }
+
+    & > * {
+      margin-top: $offset-md;
+      margin-left: $offset-md;
+
+      @include screen(lg) {
+        margin-top: $offset-md_lg;
+        margin-left: $offset-md_lg;
+      }
+
+      @include screen(md) {
+        margin-top: $offset-md_md;
+        margin-left: $offset-md_md;
+      }
+
+      @include screen(sm) {
+        margin-top: $offset-md_sm;
+        margin-left: $offset-md_sm;
+      }
+    }
+
+    #{$this}__link {
+      line-height: 22px;
+
+      @include screen(lg) {
+        font-size: 13px;
+        line-height: 18px;
+      }
+
+      @include screen(sm) {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &_lg {
+    margin-top: -#{$offset-lg};
+    margin-left: -#{$offset-lg};
+
+    @include screen(sm) {
+      margin-top: -#{$offset-lg_sm};
+      margin-left: -#{$offset-lg_sm};
+    }
+
+    & > * {
+      margin-top: $offset-lg;
+      margin-left: $offset-lg;
+
+      @include screen(sm) {
+        margin-top: $offset-lg_sm;
+        margin-left: $offset-lg_sm;
+      }
+    }
+
+    #{$this}__link {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &_bold {
+    #{$this}__link {
+      font-weight: 500;
+
+      &.is-active {
+        font-weight: 800;
+      }
+    }
+  }
+
+  &_light {
+    #{$this}__link {
+      color: color(gray);
+
+      &.is-active {
+        color: color(light);
+      }
+    }
+  }
+
+  &_light-gray {
+    #{$this}__link {
+      color: color(gray);
+
+      &.is-active {
+        color: color(gray);
+      }
+    }
+  }
+
+  &_dark {
+    #{$this}__link {
+      color: color(dark);
+    }
+  }
+
+  &_gray {
+    #{$this}__link {
+      color: color(dark-gray);
+
+      &.is-active {
+        color: color(dark);
+      }
+    }
+  }
+
+  &__link {
+    padding: 4px;
+    white-space: nowrap;
+    transition: color $ease-main;
+
+    &:focus,
+    &:hover,
+    &.is-active:focus,
+    &.is-active:hover {
+      color: color(primary);
+    }
+  }
+}

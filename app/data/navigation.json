@@ -1,0 +1,26 @@
+[
+  {
+    "href": "#about",
+    "name": "About"
+  },
+  {
+    "href": "#how-it-works",
+    "name": "How it works?"
+  },
+  {
+    "href": "#achivements",
+    "name": "Main Features"
+  },
+  {
+    "href": "#mobile-app",
+    "name": "Mobile app"
+  },
+  {
+    "href": "#clients",
+    "name": "Clients"
+  },
+  {
+    "href": "#join-us",
+    "name": "Join us"
+  }
+]

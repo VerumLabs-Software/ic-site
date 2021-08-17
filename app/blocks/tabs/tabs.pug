@@ -1,0 +1,27 @@
+//- Example
+//- +tabs
+  //- +tab()(data-tab-target="tab1").is-active Информация
+  //- +tab()(data-tab-target="tab2") Контент
+  //- +tab()(data-tab-target="tab3") Тексты
+
+//- +tabs-content
+  //- +tab-wrapper()(data-tab="tab1" data-tab-group="testTabs").is-active Это таб 1
+  //- +tab-wrapper()(data-tab="tab2" data-tab-group="testTabs") Это таб 2
+  //- +tab-wrapper()(data-tab="tab3" data-tab-group="testTabs") Это таб 3
+
+mixin tabs()
+  +b.tabs&attributes(attributes)
+    block
+
+mixin tab({icon, id, text, groupId, defaultActive})
+  +b.tab(tabindex="0", data-tab-target=id, data-tab-target-group=groupId, class=`${defaultActive ? 'is-active' : ''}`)&attributes(attributes)
+    +icon(icon).__icon
+    div!=text
+
+mixin tabs-content()
+  +b.tabs-content&attributes(attributes)
+    block
+
+mixin tab-wrapper({id, groupId})
+  +b.tab-wrapper(data-tab=id, data-tab-group=groupId)&attributes(attributes)
+    block

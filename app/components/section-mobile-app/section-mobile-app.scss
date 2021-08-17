@@ -1,0 +1,133 @@
+.section-mobile-app {
+  padding-top: 85px;
+  padding-bottom: 85px;
+
+  $this: &;
+
+  @include screen(lg) {
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+
+  @include screen(md) {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  @include screen(sm) {
+    padding-top: 53px;
+    padding-bottom: 53px;
+  }
+
+  .tab-wrapper {
+    &[data-tab="mobileAppTab2"] .image,
+    &[data-tab="mobileAppTab3"] .image,
+    &[data-tab="mobileAppTab4"] .image {
+      max-width: 252px;
+    }
+  }
+
+  .slider_free-tabs {
+    margin-top: 30px;
+  }
+
+  .slider_free-tabs,
+  .slider_free {
+    margin-top: 30px;
+  }
+
+  .slider_default,
+  .slider_free {
+    .image {
+      box-shadow: 0 30px 40px rgba(color(black), 0.15);
+    }
+  }
+
+  .slider_default {
+    .swiper-slide {
+      padding: 95px 140px 166px;
+
+      @include screen(md) {
+        padding: 95px 75px 127px;
+      }
+    }
+
+    .swiper-navigation {
+      transform: translateY(-185%);
+      left: 38px;
+      right: 38px;
+
+      @include screen(md) {
+        transform: translateY(-100%);
+        left: 21px;
+        right: 21px;
+      }
+    }
+  }
+
+  &__tabs {
+    margin-top: 60px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__buttons {
+    display: flex;
+    margin-left: 40px;
+
+    @include screen(sm) {
+      margin-left: 0;
+      margin-top: 60px;
+    }
+
+    > *:not(:first-child) {
+      margin-left: 30px;
+
+      @include screen(lg) {
+        margin-left: 25px;
+      }
+
+      @include screen(md) {
+        margin-left: 13px;
+      }
+
+      @include screen(sm) {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  &__button {
+    width: 175px;
+    height: 50px;
+    border-radius: radius(md);
+    border: 2px solid color(gray);
+
+    @include screen(lg) {
+      width: 142px;
+      height: 40px;
+    }
+
+    @include screen(md) {
+      width: 93px;
+      height: 26px;
+    }
+
+    @include screen(sm) {
+      width: 154px;
+      height: 44px;
+    }
+
+    &.button_app-store .image {
+      width: 73%;
+    }
+
+    &.button_google-play .image {
+      width: 85%;
+    }
+  }
+}

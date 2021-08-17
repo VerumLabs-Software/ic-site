@@ -1,0 +1,9 @@
+mixin client-block(client)
+  +b.client-block(data-type=client.type)&attributes(attributes)
+    +e.popup
+      +image-png(client.logo)._auto.__logo
+      +text._sm.__description!=client.description
+    +e.author
+      +image-png(client.avatar).__avatar
+      +e.author-name!=client.name
+      +text._sm.__author-job!=client.job

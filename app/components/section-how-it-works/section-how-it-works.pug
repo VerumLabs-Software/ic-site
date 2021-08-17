@@ -1,0 +1,22 @@
+mixin section-how-it-works()
+  +b.SECTION(data-section="").section-how-it-works#how-it-works&attributes(attributes)
+    .container
+      +title How LPGgo works?
+      +grid.__grid.hide-sm
+        +col(6)
+          +tab-cards-content
+            each tab in getData('how-it-works-tabs')
+              +tab-cards-wrapper(tab)
+                +video(tab.video)
+        +col(6)
+          +tab-cards
+            each tab in getData('how-it-works-tabs')
+              +tab-card(tab)
+      +slider(false, false).__slider.show-sm.js-slider-free
+        each tab in getData('how-it-works-tabs')
+          +slide
+            +tab-card(tab)
+      +tab-cards-content.__tabs-content.show-sm
+        each tab in getData('how-it-works-tabs')
+          +tab-cards-wrapper(tab)
+            +video(tab.video)

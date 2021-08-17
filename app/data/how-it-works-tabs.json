@@ -1,0 +1,27 @@
+[
+  {
+    "groupId": "howItWorksTabs",
+    "id": "howItWorksTab1",
+    "icon": "brain",
+    "title": "Shoot like a pro every time",
+    "description": "Our short tutorials & intuitive in-app camera features teach you to shoot like a professional in minutes.",
+    "video": "how-it-works/video-1",
+    "defaultActive": true
+  },
+  {
+    "groupId": "howItWorksTabs",
+    "id": "howItWorksTab2",
+    "icon": "customize",
+    "title": "Customize your content",
+    "description": "Add your logo, select licensed music and send it off for editing. Sit back, relax & let us do the rest.",
+    "video": "how-it-works/video-2"
+  },
+  {
+    "groupId": "howItWorksTabs",
+    "id": "howItWorksTab3",
+    "icon": "lampman",
+    "title": "24 hour turnaround time",
+    "description": "Our creative editors perfect your video/photos & send back to you within 24 hours.",
+    "video": "how-it-works/video-3"
+  }
+]

@@ -1,0 +1,21 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = ' | Terms of Use'
+
+block content
+  body.terms-page
+    +fixed-header('navigation-reverse').hide-sm
+    +menu('terms-navigation').show-sm
+
+    main
+      +section-terms
+
+    +footer('terms-navigation')
+
+    +popup('country-code')
+      +inputbox._lg._light
+        +input(data-mask="tel", type="tel")._lg._light
+      +button._primary._xl Send me invite
+
+    include ../../layouts/scripts

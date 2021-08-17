@@ -1,0 +1,30 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": "auto",
+        // "loose": true,
+        // "corejs": 3,
+        // "useBuiltIns": "entry",
+        "targets": {
+          "browsers": ["last 2 versions", "ie >= 11", "iOS >= 11"]
+        }
+      }
+    ]
+  ],
+  "ignore": ["node_modules"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./app"],
+        "alias": {
+          "blocks": "./app/blocks/",
+          "components": "./app/components/",
+          "scripts": "./app/scripts/"
+        }
+      }
+    ]
+  ]
+}

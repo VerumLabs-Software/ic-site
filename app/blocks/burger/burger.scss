@@ -1,0 +1,21 @@
+.burger {
+  padding: 5px 5px 5px 0;
+
+  $this: &;
+
+  &__icon {
+    @include size(25px, max);
+  }
+
+  &_light {
+    #{$this}__icon > * {
+      fill: color(light);
+    }
+  }
+
+  &_dark {
+    #{$this}__icon > * {
+      fill: color(dark);
+    }
+  }
+}

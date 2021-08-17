@@ -1,0 +1,72 @@
+$default-breakpoint-name: xxl;
+$default-breakpoint-value: map_has_key($breakpoints, $default-breakpoint-name);
+$new-breakpoints: map_remove($breakpoints, $default-breakpoint-name);
+$grid-col-width: param(grid, width) / param(grid, cols); // Ширина одной колонки
+
+.grid {
+  font-size: 0;
+  display: flex;
+  margin: (param(grid, gap-vertical-md)) * (-1) (param(grid, gap-md) / 2) * (-1)
+    0;
+
+  $this: &;
+
+  @include screen(md) {
+    margin: (param(grid, gap-vertical-sm)) * (-1) (param(grid, gap-sm) / 2) *
+      (-1) 0;
+  }
+
+  &__col {
+    box-sizing: border-box;
+    padding: param(grid, gap-vertical-md) param(grid, gap-md) / 2 0;
+    margin: 0;
+
+    @include screen(md) {
+      padding: param(grid, gap-vertical-sm) param(grid, gap-sm) / 2 0;
+    }
+
+    &_grow {
+      flex-grow: 1;
+    }
+
+    &_flex {
+      display: flex;
+
+      &_col {
+        flex-direction: column;
+      }
+    }
+
+    @for $i from 1 through 15 {
+      &_#{$default-breakpoint-name}_#{$i} {
+        width: $i * $grid-col-width;
+      }
+    }
+
+    @each $key, $val in $new-breakpoints {
+      @for $i from 1 through 15 {
+        @include screen($key) {
+          &_#{$key}_#{$i} {
+            width: $i * $grid-col-width;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: param(container, width);
+  padding-left: param(container, padding-md);
+  padding-right: param(container, padding-md);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  padding-left: param(container, padding-md);
+  padding-right: param(container, padding-md);
+  box-sizing: border-box;
+}

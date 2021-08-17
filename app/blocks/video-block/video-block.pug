@@ -1,0 +1,8 @@
+mixin video-block(video)
+  +b.A(href=video.link, target="_blank").video-block&attributes(attributes)
+    +image-jpg(video.preview).__image
+      +icon('play-circle')
+      span.time!=video.time
+    +e.info
+      +e.title!=video.title
+      +e.subtitle!=video.subtitle

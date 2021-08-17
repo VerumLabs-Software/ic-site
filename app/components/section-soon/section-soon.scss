@@ -1,0 +1,149 @@
+.section-soon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include size(100%);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+
+  $this: &;
+
+  .webp & {
+    background-image: url("../../assets/images/soon/bg.webp");
+
+    @include screen(xs) {
+      background-image: url("../../assets/images/soon/mobile-bg.webp");
+    }
+  }
+
+  .no-webp & {
+    background-image: url("../../assets/images/soon/bg.jpg");
+
+    @include screen(xs) {
+      background-image: url("../../assets/images/soon/mobile-bg.jpg");
+    }
+  }
+
+  .container {
+    max-width: 770px;
+    text-align: center;
+
+    @include screen(md) {
+      max-width: 470px;
+    }
+  }
+
+  &__divider {
+    width: 258px;
+    height: 1px;
+    margin: 36px auto;
+    background-color: color(light);
+
+    @include screen(md) {
+      width: 137px;
+      margin: 19px auto;
+    }
+  }
+
+  &__logo {
+    padding-top: 160px;
+    @include size(101px);
+    margin-left: auto;
+    margin-right: auto;
+
+    @include screen(md) {
+      padding-top: 86px;
+      @include size(53px);
+    }
+
+    @include screen(xs) {
+      padding-top: 150px;
+      @include size(92px);
+
+      @media screen and (max-height: 800px) {
+        padding-top: 90px;
+      }
+    }
+  }
+
+  &__title,
+  &__description,
+  &__copyright {
+    color: color(light);
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-top: 61px;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 78px;
+    letter-spacing: 0.15em;
+
+    @include screen(md) {
+      margin-top: 34px;
+      font-size: 32px;
+      line-height: 41px;
+    }
+
+    @include screen(xs) {
+      margin-top: 249px;
+      line-height: 42px;
+
+      @media screen and (max-height: 800px) {
+        margin-top: 90px;
+      }
+    }
+  }
+
+  &__description {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    line-height: 45px;
+    letter-spacing: 0.03em;
+
+    @include screen(md) {
+      font-size: 13px;
+      line-height: 24px;
+    }
+
+    @include screen(xs) {
+      max-width: 235px;
+      font-size: 14px;
+      line-height: 25px;
+
+      &:first-of-type {
+        margin-top: 59px;
+      }
+
+      &:last-of-type {
+        margin-top: 25px;
+      }
+    }
+  }
+
+  &__copyright {
+    display: block;
+    margin-top: 210px;
+    padding-bottom: 55px;
+    font-size: 15px;
+    line-height: 45px;
+    letter-spacing: 0.15em;
+
+    @include screen(md) {
+      margin-top: 110px;
+      padding-bottom: 31px;
+      font-size: 8px;
+      line-height: 24px;
+    }
+
+    @include screen(xs) {
+      margin-top: 50px;
+      padding-bottom: 23px;
+      font-size: 12px;
+    }
+  }
+}

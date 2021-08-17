@@ -1,0 +1,8 @@
+mixin section-youtube()
+  +b.SECTION(data-section="").section-youtube#join-us&attributes(attributes)
+    .container
+      +title Join us in YouTube
+      +slider(false, false).__slider.js-slider-free
+        each video in getData('youtube-videos')
+          +slide
+            +video-block(video)

@@ -1,0 +1,31 @@
+/*
+Функция получения параметра из массива
+Пример: background: gradient(main);
+*/
+@function param($param, $subparam) {
+  @return map-get(map-get($params, $param), $subparam);
+}
+
+/*
+Функция получения цвета из массива
+Пример: background-color: color(primary);
+*/
+@function color($color) {
+  @return map-get($colors, $color);
+}
+
+/*
+Функция округления
+Пример: border-radius: radius(sm);
+*/
+@function radius($round) {
+  @return map-get($radius, $round);
+}
+
+/*
+Функция получения градиента из массива
+Пример: background: gradient(main);
+*/
+@function gradient($gradient) {
+  @return map-get($gradients, $gradient);
+}
