@@ -24,12 +24,12 @@
     "name": "Join us"
   },
   {
-    "href": "./privacy.html",
+    "href": "./privacy",
     "name": "Privacy policy",
     "external": true
   },
   {
-    "href": "./terms.html",
+    "href": "./terms",
     "name": "Terms of Use",
     "external": true
   }

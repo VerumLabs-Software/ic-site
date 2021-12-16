@@ -24,6 +24,7 @@
   &__content {
     display: flex;
     justify-content: space-between;
+
     > *:not(:first-child) {
       margin-left: 40px;
     }
@@ -70,20 +71,14 @@
     display: flex;
     align-items: center;
 
-    @include screen(sm) {
-      display: block;
-
-      .button {
-        width: 100%;
-        max-width: 123px;
-      }
+    .button {
+      width: 100%;
+      box-sizing: border-box;
     }
 
-    @include screen(xs) {
-      .button {
-        width: 100%;
-        max-width: 90px;
-      }
+    @include screen(sm) {
+      flex-direction: column;
+      max-width: 160px;
     }
 
     & > *:not(:first-child) {
@@ -130,7 +125,7 @@
   }
 
   &__inputbox {
-    max-width: 380px;
+    max-width: 350px;
 
     @include screen(lg) {
       max-width: 310px;
@@ -138,10 +133,7 @@
   }
 
   &__logo {
-    @include size(44px, max);
-
-    @include screen(lg) {
-      @include size(37px, max);
-    }
+    max-width: 106px;
+    max-height: 46px;
   }
 }

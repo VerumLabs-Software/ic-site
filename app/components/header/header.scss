@@ -31,7 +31,7 @@
 
   @include screen(md) {
     padding-top: 43px;
-    padding-bottom: 84px;
+    padding-bottom: 164px;
   }
 
   @include screen(sm) {
@@ -44,23 +44,52 @@
     background-position: 100%;
   }
 
+  &__top {
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    min-width: 252px;
+
+    @include screen(md) {
+      min-width: 192px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__list {
+    margin-left: 75px; // -4px
+
+    @include screen(md) {
+      margin-left: 45px; // -4px;
+    }
+  }
+
   &__list > li:first-child > a {
     font-weight: 800;
     color: color(light);
 
     &:focus,
     &:hover {
-      color: color(primary);
+      color: color(light);
     }
   }
 
   &__form {
-    margin-top: 70px;
-    max-width: 460px;
+    margin-top: 135px;
+    max-width: 440px;
 
     @include screen(lg) {
       margin-top: 52px;
-      max-width: 390px;
+      max-width: 364px;
     }
 
     @include screen(md) {
@@ -87,15 +116,26 @@
     }
   }
 
-  &__content {
-    margin-top: 119px;
+  &__logo-mini {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 60px;
+    max-height: 40px;
 
-    @include screen(lg) {
-      margin-top: 96px;
+    > * {
+      fill: color(light);
     }
+  }
+
+  &__content {
+    position: relative;
+    margin-top: 212px;
 
     @include screen(md) {
-      margin-top: 49px;
+      margin-top: 160px;
     }
 
     @include screen(sm) {
@@ -113,6 +153,10 @@
 
     @include screen(md) {
       max-width: 325px;
+    }
+
+    @include screen(sm) {
+      margin-top: 155px;
     }
   }
 
@@ -142,7 +186,7 @@
     }
 
     @include screen(sm) {
-      font-weight: 300;
+      font-weight: 500;
       margin-top: 50px;
     }
   }
@@ -163,53 +207,8 @@
     }
 
     @include screen(md) {
-      bottom: 105px;
+      bottom: 165px;
       max-width: 425px;
-    }
-  }
-}
-
-.fixed-header {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  box-shadow: 0 4px 50px rgba(color(black), 0.08);
-  background-color: rgba(color(light), 0.96);
-  transform: translateY(-100%);
-  transition: transform $ease-main;
-
-  $this: &;
-
-  &.is-active {
-    transform: translateY(0);
-  }
-
-  &__content {
-    display: flex;
-    align-items: center;
-
-    > *:not(:first-child) {
-      margin-left: 88px;
-
-      @include screen(md) {
-        margin-left: 58px;
-      }
-    }
-  }
-
-  &__logo {
-    @include size(44px, max);
-
-    @include screen(lg) {
-      @include size(40px, max);
-    }
-
-    @include screen(md) {
-      @include size(34px, max);
     }
   }
 }

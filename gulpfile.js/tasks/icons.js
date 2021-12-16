@@ -8,7 +8,11 @@ const imagemin = require("gulp-imagemin");
 module.exports = () =>
   gulp
     .src("app/static/icons/**/*.svg")
-    .pipe(plumber({errorHandler: errorHandler("Error in icons task")}))
+    .pipe(
+      plumber({
+        errorHandler: errorHandler("Error in icons task"),
+      }),
+    )
     .pipe(
       svgSymbols({
         title: false,

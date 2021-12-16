@@ -187,6 +187,7 @@ $mobilePopupMargin: 30px !default;
     // Note: decided not to use line-height here for alignment because it causes issues e.g. large font-sizes will overlap, and also looks bad if one country overflows onto 2 lines
     outline: none;
     padding: 10px #{$flagPadding};
+    cursor: pointer;
   }
 
   // the dial codes after the country names are greyed out

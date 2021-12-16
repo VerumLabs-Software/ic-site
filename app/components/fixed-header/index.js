@@ -1,4 +1,4 @@
-export default function header() {
+export default function fixedHeader() {
   const fixedHeader = document.querySelector(".js-fixed-header");
 
   const checkWindowScroll = () => {
@@ -10,5 +10,7 @@ export default function header() {
   };
 
   window.addEventListener("load", checkWindowScroll);
-  window.addEventListener("scroll", checkWindowScroll, {passive: true});
+  window.addEventListener("scroll", checkWindowScroll, {
+    passive: true,
+  });
 }

@@ -13,15 +13,15 @@
     "id": "howItWorksTab2",
     "icon": "customize",
     "title": "Customize your content",
-    "description": "Add your logo, select licensed music and send it off for editing. Sit back, relax & let us do the rest.",
+    "description": "Add your logo & branding.  Select licensed music. Send off for editing. Sit back, relax & let us do the rest.",
     "video": "how-it-works/video-2"
   },
   {
     "groupId": "howItWorksTabs",
     "id": "howItWorksTab3",
-    "icon": "lampman",
+    "icon": "curve",
     "title": "24 hour turnaround time",
-    "description": "Our creative editors perfect your video/photos & send back to you within 24 hours.",
+    "description": "Our genius editors perfect your video/photos & send back to you within 24 hours.",
     "video": "how-it-works/video-3"
   }
 ]

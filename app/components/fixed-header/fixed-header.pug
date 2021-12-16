@@ -1,0 +1,7 @@
+mixin fixed-header(json)
+  +b.HEADER.fixed-header.js-fixed-header&attributes(attributes)
+    .container
+      +e.content
+        +image-svg('logo-branded').__logo
+        nav
+          +list(getData(json))._sm._bold._gray.__list

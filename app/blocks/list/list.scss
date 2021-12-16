@@ -16,32 +16,12 @@ $offset-lg_sm: 12px;
   $this: &;
 
   &_sm {
-    margin-top: -#{$offset-sm};
-    margin-left: -#{$offset-sm};
-
-    @include screen(lg) {
-      margin-top: -#{$offset-sm_lg};
-      margin-left: -#{$offset-sm_lg};
-    }
-
-    @include screen(md) {
-      margin-top: -#{$offset-sm};
-      margin-left: -#{$offset-sm};
-    }
+    margin-top: -#{$offset-sm + 2px};
+    margin-left: -#{$offset-sm + 2px};
 
     & > * {
       margin-top: $offset-sm;
       margin-left: $offset-sm;
-
-      @include screen(lg) {
-        margin-top: $offset-sm_lg;
-        margin-left: $offset-sm_lg;
-      }
-
-      @include screen(md) {
-        margin-top: $offset-sm;
-        margin-left: $offset-sm;
-      }
     }
 
     #{$this}__link {
@@ -51,22 +31,22 @@ $offset-lg_sm: 12px;
   }
 
   &_md {
-    margin-top: -#{$offset-md};
-    margin-left: -#{$offset-md};
+    margin-top: -#{$offset-md + 2px};
+    margin-left: -#{$offset-md + 2px};
 
     @include screen(lg) {
-      margin-top: -#{$offset-md_lg};
-      margin-left: -#{$offset-md_lg};
+      margin-top: -#{$offset-md_lg + 2px};
+      margin-left: -#{$offset-md_lg + 2px};
     }
 
     @include screen(md) {
-      margin-top: -#{$offset-md_md};
-      margin-left: -#{$offset-md_md};
+      margin-top: -#{$offset-md_md + 2px};
+      margin-left: -#{$offset-md_md + 2px};
     }
 
     @include screen(sm) {
-      margin-top: -#{$offset-md_sm};
-      margin-left: -#{$offset-md_sm};
+      margin-top: -#{$offset-md_sm + 2px};
+      margin-left: -#{$offset-md_sm + 2px};
     }
 
     & > * {
@@ -105,12 +85,12 @@ $offset-lg_sm: 12px;
   }
 
   &_lg {
-    margin-top: -#{$offset-lg};
-    margin-left: -#{$offset-lg};
+    margin-top: -#{$offset-lg + 2px};
+    margin-left: -#{$offset-lg + 2px};
 
     @include screen(sm) {
-      margin-top: -#{$offset-lg_sm};
-      margin-left: -#{$offset-lg_sm};
+      margin-top: -#{$offset-lg_sm + 2px};
+      margin-left: -#{$offset-lg_sm + 2px};
     }
 
     & > * {
@@ -169,8 +149,12 @@ $offset-lg_sm: 12px;
     #{$this}__link {
       color: color(dark-gray);
 
-      &.is-active {
-        color: color(dark);
+      &:focus,
+      &:hover,
+      &.is-active,
+      &.is-active:focus,
+      &.is-active:hover {
+        color: color(primary);
       }
     }
   }
@@ -184,7 +168,7 @@ $offset-lg_sm: 12px;
     &:hover,
     &.is-active:focus,
     &.is-active:hover {
-      color: color(primary);
+      color: color(light);
     }
   }
 }

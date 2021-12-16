@@ -3,6 +3,4 @@ dist
 *.log
 .idea
 app/.idea
-package-lock.json
-yarn.lock
 .publish

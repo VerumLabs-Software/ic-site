@@ -14,7 +14,7 @@ import burger from "blocks/burger";
 import menu from "blocks/menu";
 import popup from "blocks/popup";
 
-import header from "components/header";
+import fixedHeader from "components/fixed-header";
 import sectionEmpowering from "components/section-empowering";
 import sectionAchivementsPromo from "components/section-achivements-promo";
 
@@ -31,7 +31,7 @@ $(() => {
     anchor();
     form();
     scrollbar();
-    header();
+    fixedHeader();
     burger();
     menu();
   }
