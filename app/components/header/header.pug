@@ -4,7 +4,7 @@ mixin header()
       +e.NAV.__nav
         +image-svg('logo').__logo
         +list(getData('navigation'))._sm._bold._light.__list
-    +image-png('about/phone', 'Smartphone').__image.hide-sm
+    +e.IMG(src='', alt='')#about-phone.__image.hide-sm
     .container.header__content
       +icon('logo').show-sm.__logo-mini
       +burger._light.js-burger.show-sm

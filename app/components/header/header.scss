@@ -4,25 +4,10 @@
   padding-bottom: 247px;
   background-color: color(dark);
   background-repeat: no-repeat;
+  background-position: 50% 50%;
   background-size: cover;
 
   $this: &;
-
-  .webp & {
-    background-image: url("../../assets/images/about/bg.webp");
-
-    @include screen(sm) {
-      background-image: url("../../assets/images/about/mobile-bg.webp");
-    }
-  }
-
-  .no-webp & {
-    background-image: url("../../assets/images/about/bg.jpg");
-
-    @include screen(sm) {
-      background-image: url("../../assets/images/about/mobile-bg.jpg");
-    }
-  }
 
   @include screen(lg) {
     padding-top: 35px;
@@ -37,14 +22,6 @@
   @include screen(sm) {
     padding-top: 46px;
     padding-bottom: 50px;
-    background-position: 50% 20%;
-  }
-
-  @include screen(xs) {
-    background-position: 100%;
-  }
-
-  &__top {
   }
 
   &__nav {
@@ -56,7 +33,7 @@
     min-width: 252px;
 
     @include screen(md) {
-      min-width: 192px;
+      min-width: 202px;
     }
 
     img {
@@ -69,7 +46,7 @@
     margin-left: 75px; // -4px
 
     @include screen(md) {
-      margin-left: 45px; // -4px;
+      margin-left: 30px; // -4px;
     }
   }
 
@@ -195,6 +172,8 @@
     position: absolute;
     bottom: 243px;
     right: 0;
+    width: 100%;
+    display: block;
     max-width: 687px;
 
     @include screen(xl) {

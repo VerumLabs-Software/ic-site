@@ -3,10 +3,15 @@ const path = require("path");
 const isDebug = process.env.NODE_ENV !== "production";
 
 module.exports = () => ({
-  entry: path.resolve("./app/scripts/app.js"),
+  entry: {
+    app: path.resolve("./app/pages/index"),
+    privacy: path.resolve("./app/pages/privacy"),
+    terms: path.resolve("./app/pages/terms"),
+    404: path.resolve("./app/pages/404"),
+  },
   output: {
     publicPath: "/assets/scripts/",
-    filename: "app.min.js",
+    filename: "[name].min.js",
     path: path.resolve("./dist/assets/scripts/"),
   },
   watch: isDebug,

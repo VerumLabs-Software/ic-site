@@ -50,11 +50,6 @@
 
     @include screen(sm) {
       padding: 30px 30px 47px;
-      min-height: 250px;
-    }
-
-    @include screen(xxs) {
-      min-height: 335px;
     }
   }
 

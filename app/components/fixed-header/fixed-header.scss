@@ -26,7 +26,7 @@
     margin-left: 86px;
 
     @include screen(md) {
-      margin-left: 45px;
+      margin-left: 30px;
     }
   }
 
@@ -34,7 +34,7 @@
     max-width: 252px;
 
     @include screen(md) {
-      max-width: 192px;
+      max-width: 202px;
     }
 
     img {

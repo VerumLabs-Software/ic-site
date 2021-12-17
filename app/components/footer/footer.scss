@@ -71,14 +71,14 @@
     display: flex;
     align-items: center;
 
-    .button {
-      width: 100%;
-      box-sizing: border-box;
-    }
-
     @include screen(sm) {
       flex-direction: column;
       max-width: 160px;
+
+      .button {
+        width: 100%;
+        box-sizing: border-box;
+      }
     }
 
     & > *:not(:first-child) {
