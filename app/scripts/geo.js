@@ -68,5 +68,7 @@ export default function geo() {
         changeImagesByLocation("miami");
         break;
     }
+  }).fail(() => {
+    changeImagesByLocation("miami");
   });
 }
