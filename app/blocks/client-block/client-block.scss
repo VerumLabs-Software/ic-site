@@ -134,6 +134,10 @@
     margin-top: 23px;
     line-height: 32px;
 
+    a {
+      pointer-events: none; // temp
+    }
+
     @include screen(lg) {
       margin-top: 17px;
       line-height: 26px;
