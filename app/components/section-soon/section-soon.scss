@@ -48,42 +48,40 @@
   }
 
   &__logo {
-    padding-top: 160px;
-    @include size(101px);
+    display: flex;
+    padding-top: 83px;
     margin-left: auto;
     margin-right: auto;
+    @include size(173px);
 
     @include screen(md) {
-      padding-top: 86px;
-      @include size(53px);
+      padding-top: 29px;
+      @include size(124px);
     }
 
     @include screen(xs) {
-      padding-top: 150px;
-      @include size(92px);
-
-      @media screen and (max-height: 800px) {
-        padding-top: 90px;
-      }
+      padding-top: 90px;
+      @include size(124px);
     }
   }
 
   &__title,
   &__description,
-  &__copyright {
+  &__copyright,
+  &__link {
     color: color(light);
     text-transform: uppercase;
   }
 
   &__title {
-    margin-top: 61px;
+    margin-top: 49px;
     font-size: 60px;
     font-weight: 700;
     line-height: 78px;
     letter-spacing: 0.15em;
 
     @include screen(md) {
-      margin-top: 34px;
+      margin-top: 4px;
       font-size: 32px;
       line-height: 41px;
     }
@@ -98,16 +96,60 @@
     }
   }
 
+  &__links {
+    margin-bottom: 40px;
+
+    @include screen(md) {
+      margin-bottom: 15px;
+    }
+
+    @include screen(xs) {
+      margin-bottom: 25px;
+    }
+
+    > *:not(:first-child) {
+      margin-top: 16px;
+
+      @include screen(md) {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.15em;
+    color: color(gray);
+    transition: color $ease-main;
+
+    &:hover {
+      color: color(light);
+    }
+
+    @include screen(md) {
+      font-size: 10px;
+    }
+
+    @include screen(xs) {
+      font-size: 12px;
+    }
+  }
+
   &__description {
     margin-left: auto;
     margin-right: auto;
     font-size: 25px;
     line-height: 45px;
-    letter-spacing: 0.03em;
 
     @include screen(md) {
       font-size: 13px;
       line-height: 24px;
+    }
+
+    &:first-of-type {
+      letter-spacing: 0.03em;
     }
 
     @include screen(xs) {
@@ -125,24 +167,34 @@
     }
   }
 
-  &__copyright {
-    display: block;
-    margin-top: 210px;
-    padding-bottom: 55px;
-    font-size: 15px;
-    line-height: 45px;
-    letter-spacing: 0.15em;
+  &__bottom {
+    margin-top: 125px;
+    padding-bottom: 69px;
 
     @include screen(md) {
-      margin-top: 110px;
-      padding-bottom: 31px;
-      font-size: 8px;
-      line-height: 24px;
+      margin-top: 57px;
+      padding-bottom: 50px;
     }
 
     @include screen(xs) {
       margin-top: 50px;
-      padding-bottom: 23px;
+      padding-bottom: 46px;
+    }
+  }
+
+  &__copyright {
+    display: block;
+    font-size: 15px;
+    line-height: 45px;
+    letter-spacing: 0.195em;
+
+    @include screen(md) {
+      font-size: 12px;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+    }
+
+    @include screen(xs) {
       font-size: 12px;
     }
   }

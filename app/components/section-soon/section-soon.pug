@@ -1,10 +1,13 @@
 mixin section-soon()
   +b.SECTION.section-soon&attributes(attributes)
     .container
-      +image-svg('logo-text-white').__logo
+      +image-svg('logo-soon').__logo
       +e.H1.title Coming soon
       +e.divider.hide-xs
       +e.P.description Sorry our website is currently getting a face lift
-      +e.P.description Check back soon for the new and improved site
-    .container
-      +e.copyright 2021 Infinite Creator
+      +e.P.description check back soon for the new and improved site
+    .container.section-soon__bottom
+      +e.links
+        +e.A.link(href="./privacy") Privacy Policy
+        +e.A.link(href="./terms") Terms & Conditions
+      +e.copyright 2022 Infinite Creator

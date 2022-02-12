@@ -1,20 +1,59 @@
-/*
-Как подключать шрифт
+@font-face {
+  font-family: "Airbnb Cereal App";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Airbnb Cereal App"),
+    url("https://fonts.cdnfonts.com/s/22260/AirbnbCerealLight.woff")
+      format("woff");
+}
 
-Миксин:
-@mixin font-face($name, $style, $weight, $fontname)
+@font-face {
+  font-family: "Airbnb Cereal App";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Airbnb Cereal App"),
+    url("https://fonts.cdnfonts.com/s/22260/AirbnbCerealBook.woff")
+      format("woff");
+}
 
-Пример использования:
-@include font-face('Corbel', normal, 700, 'CorbelBold');
+@font-face {
+  font-family: "Airbnb Cereal App";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Airbnb Cereal App"),
+    url("https://fonts.cdnfonts.com/s/22260/AirbnbCerealMedium.woff")
+      format("woff");
+}
 
-Соответствие письменного названия жирности числовому значению:
-100 — Thin
-200 — Extra Light, Ultra Light
-300 — Light
-400 — Normal, Book, Regular (стандартный)
-500 — Medium
-600 — Semi Bold, Demi Bold
-700 — Bold
-800 — Extra Bold, Ultra Bold
-900 — Black, Heavy
-*/
+@font-face {
+  font-family: "Airbnb Cereal App";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Airbnb Cereal App"),
+    url("https://fonts.cdnfonts.com/s/22260/AirbnbCerealBold.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Airbnb Cereal App";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local("Airbnb Cereal App"),
+    url("https://fonts.cdnfonts.com/s/22260/AirbnbCerealExtraBold.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Airbnb Cereal App";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local("Airbnb Cereal App"),
+    url("https://fonts.cdnfonts.com/s/22260/AirbnbCerealBlack.woff")
+      format("woff");
+}

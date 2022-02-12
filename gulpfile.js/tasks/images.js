@@ -2,7 +2,6 @@ const gulp = require("gulp");
 const plumber = require("gulp-plumber");
 const errorHandler = require("gulp-plumber-error-handler");
 const imagemin = require("gulp-imagemin");
-const jpegtran = require("imagemin-jpegtran");
 const webp = require("imagemin-webp");
 const extReplace = require("gulp-ext-replace");
 const changed = require("gulp-changed");
@@ -15,9 +14,13 @@ exports.images = () => {
     .pipe(
       imagemin(
         [
-          jpegtran({quality: 80, progressive: true}),
-          imagemin.optipng(),
-          imagemin.svgo({plugins: [{removeViewBox: false}]}),
+          imagemin.svgo({
+            plugins: [
+              {
+                removeViewBox: false,
+              },
+            ],
+          }),
         ],
         {verbose: true},
       ),
