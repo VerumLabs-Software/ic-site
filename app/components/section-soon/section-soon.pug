@@ -1,4 +1,5 @@
 mixin section-soon()
+  - const year = new Date().getFullYear();
   +b.SECTION.section-soon&attributes(attributes)
     .container
       +image-svg('logo-soon').__logo
@@ -10,4 +11,4 @@ mixin section-soon()
       +e.links
         +e.A.link(href="./privacy") Privacy Policy
         +e.A.link(href="./terms") Terms & Conditions
-      +e.copyright 2022 Infinite Creator
+      +e.copyright #{year} Infinite Creator
