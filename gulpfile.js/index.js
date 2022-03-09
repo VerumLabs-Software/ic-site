@@ -1,7 +1,6 @@
 const gulp = require("gulp");
 const clean = require("./tasks/clean");
 const copy = require("./tasks/copy");
-const ghpages = require("./tasks/ghpages");
 const icons = require("./tasks/icons");
 const server = require("./tasks/server");
 const images = require("./tasks/images");
@@ -16,7 +15,6 @@ gulp.task("scripts", scripts(false));
 gulp.task("scripts:watch", scripts(true));
 gulp.task("clean", clean);
 gulp.task("copy", copy);
-gulp.task("ghpages", ghpages);
 gulp.task("images", images.images);
 gulp.task("webp", images.webp);
 gulp.task("videos", videos);
@@ -51,5 +49,3 @@ gulp.task(
   "default",
   gulp.series("build", gulp.parallel("watch", "scripts:watch", "server")),
 );
-
-gulp.task("deploy", gulp.series("build", "ghpages"));
