@@ -5,6 +5,7 @@ const isDebug = process.env.NODE_ENV !== "production";
 module.exports = () => ({
   entry: {
     app: path.resolve("./app/pages/index"),
+    landing: path.resolve("./app/pages/landing"),
     privacy: path.resolve("./app/pages/privacy"),
     terms: path.resolve("./app/pages/terms"),
     404: path.resolve("./app/pages/404"),
