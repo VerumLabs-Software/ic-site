@@ -5,23 +5,28 @@ export default function sectionAchivementsPromo() {
   const typewriterData = [
     {
       icon: "instagram",
-      text: "YouTube<br><strong>Over 100 million Impressions</strong>",
+      text: "YouTube<br><strong>Over 100 Billion in Real Estate Filmed!</strong>",
     },
     {
       icon: "money",
-      text: "Instagram<br><strong>Over 75k loyal followers</strong>",
+      text: "Instagram<br><strong>Over 100k loyal followers</strong>",
     },
     {
       icon: "rocket",
-      text: "Over 15 billion<br><strong>dollars shot in real estate</strong>",
+      text: "Featured<br><strong>by the likes Forbes, Bloomberg & CNBC</strong>",
     },
     {
       icon: "youtube",
-      text: "7 Years<br><strong>of Journey</strong>",
+      text: "8 Year<br><strong>Journey</strong>",
     },
   ];
 
   const container = document.querySelector(".js-typewriter-achivements");
+
+  const stringSplitter = str => {
+    const splitter = str.replace("&amp;", "&");
+    return splitter.split("");
+  };
 
   const changeIconName = iconName => {
     const iconContainer = document.querySelector(".js-icon-achivements use");
@@ -34,6 +39,7 @@ export default function sectionAchivementsPromo() {
   const typewriter = new Typewriter(container, {
     loop: true,
     delay: 50,
+    stringSplitter,
   });
 
   typewriterData.forEach(elem => {

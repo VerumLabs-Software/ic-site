@@ -73,6 +73,7 @@
     margin-left: 58px;
 
     video {
+      object-fit: cover;
       @include size(100%);
     }
 
