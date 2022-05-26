@@ -7,6 +7,7 @@ export default function slider() {
   const defaultOptions = {
     speed: 700,
     observer: true,
+    autoHeight: true,
     observeParents: true,
     keyboard: {
       enabled: true,

@@ -2,6 +2,7 @@
   display: flex;
   height: 100%;
   flex-direction: column;
+  justify-content: space-between;
   $this: &;
 
   &__popup {
@@ -145,8 +146,8 @@
 
     @include screen(md) {
       margin-top: 8px;
-      font-size: 10px;
-      line-height: 20px;
+      font-size: 12px;
+      line-height: 22px;
     }
 
     @include screen(sm) {

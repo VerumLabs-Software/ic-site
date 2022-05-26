@@ -21,6 +21,8 @@
   }
 
   &__slider {
+    margin-top: 0;
+
     @include screen(sm) {
       margin-top: 53px;
     }
@@ -34,6 +36,7 @@
     }
 
     .swiper-slide {
+      height: 100%;
       padding: 50px 74px;
 
       @include screen(lg) {
