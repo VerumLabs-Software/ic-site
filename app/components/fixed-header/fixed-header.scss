@@ -20,14 +20,31 @@
   &__content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
+    @include screen(lg) {
+      justify-content: start;
+    }
+
+    > *:not(:first-child) {
+      margin-left: 48px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+
+    > *:not(:first-child) {
+      margin-left: 10px;
+    }
   }
 
   &__list {
-    margin-left: 86px;
+    // margin-left: 86px;
 
-    @include screen(md) {
-      margin-left: 30px;
-    }
+    // @include screen(md) {
+    //   margin-left: 30px;
+    // }
   }
 
   &__logo {

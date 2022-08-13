@@ -45,6 +45,26 @@
     }
   }
 
+  // &_app-store .image {
+  //   width: 69%;
+  // }
+
+  // &_google-play .image {
+  //   width: 80%;
+  // }
+
+  &_xs {
+    height: 30px;
+    padding: 4px 12px;
+    font-size: 13px;
+
+    @include screen(lg) {
+      height: 33px;
+      padding: 0 12px;
+      font-size: 11px;
+    }
+  }
+
   &_sm {
     height: 40px;
     padding: 0 24px;

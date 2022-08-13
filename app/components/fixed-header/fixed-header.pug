@@ -5,3 +5,8 @@ mixin fixed-header(json)
         +image-svg('logo-branded').__logo
         nav
           +list(getData(json))._sm._bold._gray.__list
+        +e.buttons.hide-lg
+          +button._xs._dark._app-store
+            +image-svg('app-store')
+          +button._xs._dark._google-play
+            +image-svg('google-play')

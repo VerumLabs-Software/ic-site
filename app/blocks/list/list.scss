@@ -1,5 +1,5 @@
 $offset-sm: 4px;
-$offset-sm_lg: 25px;
+$offset-sm_md: 4px;
 
 $offset-md: 14px;
 $offset-md_lg: 12px;
@@ -19,9 +19,19 @@ $offset-lg_sm: 12px;
     margin-top: -#{$offset-sm + 2px};
     margin-left: -#{$offset-sm + 2px};
 
+    // @include screen(md) {
+    //   margin-top: -#{$offset-sm_md + 2px};
+    //   margin-left: -#{$offset-sm_md + 2px};
+    // }
+
     & > * {
       margin-top: $offset-sm;
       margin-left: $offset-sm;
+
+      // @include screen(md) {
+      //   margin-top: $offset-sm_md;
+      //   margin-left: $offset-sm_md;
+      // }
     }
 
     #{$this}__link {

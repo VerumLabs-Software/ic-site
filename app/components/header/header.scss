@@ -27,6 +27,15 @@
   &__nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
+    @include screen(lg) {
+      justify-content: start;
+    }
+
+    > *:not(:first-child) {
+      margin-left: 48px;
+    }
   }
 
   &__logo {
@@ -43,11 +52,11 @@
   }
 
   &__list {
-    margin-left: 75px; // -4px
+    // margin-left: 75px; // -4px
 
-    @include screen(md) {
-      margin-left: 30px; // -4px;
-    }
+    // @include screen(md) {
+    //   margin-left: 30px; // -4px;
+    // }
   }
 
   &__list > li:first-child > a {
@@ -134,6 +143,14 @@
 
     @include screen(sm) {
       margin-top: 155px;
+    }
+  }
+
+  &__download-buttons {
+    display: flex;
+
+    > *:not(:first-child) {
+      margin-left: 10px;
     }
   }
 

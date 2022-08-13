@@ -5,7 +5,7 @@ export default function sectionAchivementsPromo() {
   const typewriterData = [
     {
       icon: "instagram",
-      text: "YouTube<br><strong>Over 100 Billion in Real Estate Filmed!</strong>",
+      text: "YouTube<br><strong>Over $100 Billion in Real Estate Filmed!</strong>",
     },
     {
       icon: "money",

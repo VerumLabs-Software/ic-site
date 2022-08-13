@@ -4,6 +4,11 @@ mixin header()
       +e.NAV.__nav
         +image-svg('logo').__logo
         +list(getData('navigation'))._sm._bold._light.__list
+        +e.download-buttons.hide-lg
+          +button._xs._dark._app-store
+            +image-svg('app-store')
+          +button._xs._dark._google-play
+            +image-svg('google-play')
     +e.IMG(src='', alt='')#about-phone.__image.hide-sm
     .container.header__content
       +icon('logo').show-sm.__logo-mini
