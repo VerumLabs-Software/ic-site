@@ -11,7 +11,12 @@
     color: color(gray);
   }
 
-  h1,
+  h1 {
+    font-size: 42px;
+    line-height: 48px;
+    font-weight: 700;
+  }
+
   h2,
   h3 {
     font-size: 64px;
@@ -19,7 +24,23 @@
     line-height: 75px;
   }
 
-  h1,
+  h1 {
+    @include screen(lg) {
+      font-size: 32px;
+      line-height: 44px;
+    }
+
+    @include screen(md) {
+      font-size: 28px;
+      line-height: 38px;
+    }
+
+    @include screen(sm) {
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+
   h2 {
     @include screen(lg) {
       font-size: 48px;
@@ -34,13 +55,6 @@
     @include screen(sm) {
       font-size: 28px;
       line-height: 27px;
-    }
-  }
-
-  h1 {
-    @include screen(sm) {
-      font-size: 36px;
-      line-height: 42px;
     }
   }
 

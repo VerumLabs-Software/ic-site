@@ -6,7 +6,36 @@ import Inputmask from "inputmask";
 // import "parsleyjs";
 
 export default function form() {
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbw_I0dErITL5lx5S4BFhJuBvk_Dv_auKe2m5IUmTaJyWAFTSEa5eAZyZ-aqE6WLCp47/exec";
+  const mainForm = document.getElementById("main-form");
+  const successMessage = mainForm.querySelector('[data-message="success"]');
+  const errorMessage = mainForm.querySelector('[data-message="error"]');
   const telInputs = document.querySelectorAll('input[type="tel"]');
+
+  mainForm?.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const formData = new FormData(mainForm);
+    const phoneInput = mainForm.querySelector('[data-mask="tel"]');
+    const phoneDialCode = phoneInput.dataset.dialCode;
+
+    formData.set("phone", `+${phoneDialCode} ${formData.get("phone")}`);
+
+    successMessage.classList.remove("is-active");
+    errorMessage.classList.remove("is-active");
+
+    fetch(scriptURL, {method: "POST", body: formData})
+      .then(response => {
+        mainForm.reset();
+        successMessage.classList.add("is-active");
+        successMessage.innerHTML = "Form submitted successfully!";
+      })
+      .catch(error => {
+        errorMessage.classList.add("is-active");
+        errorMessage.innerHTML = error.message;
+      });
+  });
 
   telInputs.forEach(input => {
     intlTelInput(input, {
@@ -15,11 +44,12 @@ export default function form() {
         "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.min.js",
       separateDialCode: true,
       preferredCountries: ["us", "mx", "gb"],
-      customPlaceholder: selectedCountryPlaceholder => {
+      customPlaceholder: (selectedCountryPlaceholder, selectedCountryData) => {
         if (input.getAttribute("placeholder") === selectedCountryPlaceholder) {
           return;
         }
 
+        input.dataset.dialCode = selectedCountryData.dialCode;
         input.setAttribute("placeholder", selectedCountryPlaceholder);
 
         const updatedCountryPlaceholder = selectedCountryPlaceholder.replace(
@@ -35,43 +65,4 @@ export default function form() {
       },
     });
   });
-
-  // Inputmask({
-  //   alias: "email",
-  // }).mask('input[data-mask="email"]');
-
-  // Inputmask({
-  //   mask: "1.2.y",
-  //   placeholder: "__.__.____",
-  //   leapday: "29.02.",
-  //   separator: ".",
-  //   alias: "dd/mm/yyyy",
-  // }).mask('input[data-mask="date"]');
-
-  // Parsley.addMessages("ru", {
-  //   defaultMessage: "Некорректное значение.",
-  //   type: {
-  //     email: "Введите адрес электронной почты.",
-  //     url: "Введите URL адрес.",
-  //     number: "Введите число.",
-  //     integer: "Введите целое число.",
-  //     digits: "Введите только цифры.",
-  //     alphanum: "Введите буквенно-цифровое значение.",
-  //   },
-  //   notblank: "Это поле должно быть заполнено.",
-  //   required: "Обязательное поле.",
-  //   pattern: "Это значение некорректно.",
-  //   min: "Это значение должно быть не менее чем %s.",
-  //   max: "Это значение должно быть не более чем %s.",
-  //   range: "Это значение должно быть от %s до %s.",
-  //   minlength: "Это значение должно содержать не менее %s символов.",
-  //   maxlength: "Это значение должно содержать не более %s символов.",
-  //   length: "Это значение должно содержать от %s до %s символов.",
-  //   mincheck: "Выберите не менее %s значений.",
-  //   maxcheck: "Выберите не более %s значений.",
-  //   check: "Выберите от %s до %s значений.",
-  //   equalto: "Это значение должно совпадать.",
-  // });
-
-  // Parsley.setLocale("ru");
 }

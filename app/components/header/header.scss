@@ -9,6 +9,20 @@
 
   $this: &;
 
+  * {
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(color(black), 0.5);
+  }
+
   @include screen(lg) {
     padding-top: 35px;
     padding-bottom: 204px;
@@ -39,11 +53,7 @@
   }
 
   &__logo {
-    min-width: 252px;
-
-    @include screen(md) {
-      min-width: 202px;
-    }
+    min-width: 190px;
 
     img {
       width: 100%;
@@ -70,7 +80,7 @@
   }
 
   &__form {
-    margin-top: 135px;
+    margin-top: 75px;
     max-width: 440px;
 
     @include screen(lg) {
@@ -142,7 +152,10 @@
     }
 
     @include screen(sm) {
-      margin-top: 155px;
+      margin-top: 105px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -156,7 +169,7 @@
 
   &__buttons {
     display: flex;
-    margin-top: 75px;
+    margin-top: 70px;
 
     > * {
       width: 100%;
@@ -169,6 +182,15 @@
 
   &__title.title h1 {
     margin-top: 40px;
+
+    span {
+      text-transform: uppercase;
+      font-size: 0.76em;
+
+      @include screen(sm) {
+        font-size: 0.9em;
+      }
+    }
 
     @include screen(xl) {
       margin-top: 34px;

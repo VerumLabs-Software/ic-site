@@ -13,4 +13,8 @@ export default function anchor() {
         .animate({scrollTop: target.offset().top}, 1000, "swing");
     }
   });
+
+  $(document).on("click", ".js-prevent", function (e) {
+    e.preventDefault();
+  });
 }

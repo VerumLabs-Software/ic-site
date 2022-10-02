@@ -1,0 +1,11 @@
+.inputcol {
+  $this: &;
+
+  > *:not(:first-child) {
+    margin-top: 20px;
+
+    @include screen(sm) {
+      margin-top: 16px;
+    }
+  }
+}

@@ -63,6 +63,11 @@ $grid-col-width: param(grid, width) / param(grid, cols); // Ширина одн�
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
+
+  @include screen(sm) {
+    padding-left: param(container, padding-sm);
+    padding-right: param(container, padding-sm);
+  }
 }
 
 .container-fluid {

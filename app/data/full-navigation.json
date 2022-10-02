@@ -24,6 +24,11 @@
     "name": "Join us"
   },
   {
+    "href": "#",
+    "name": "Enterprise",
+    "popup": "main-form"
+  },
+  {
     "href": "./privacy",
     "name": "Privacy policy",
     "external": true

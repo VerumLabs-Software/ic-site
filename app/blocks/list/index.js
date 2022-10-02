@@ -14,7 +14,7 @@ export default function list() {
     nav.forEach(list => {
       navLinks = list.querySelectorAll(".js-anchor");
       navLinks.forEach(link => link.classList.remove("is-active"));
-      navLinks[index].classList.add("is-active");
+      navLinks[index]?.classList.add("is-active");
     });
   };
 

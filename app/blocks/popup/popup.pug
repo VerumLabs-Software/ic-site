@@ -1,5 +1,49 @@
 mixin popup(name)
   +b.popup(data-popup-wrapper=name)&attributes(attributes)
     +e.overlay(data-popup-close=name)
-    +e.wrapper
-      block
+    +e.container
+      +e.wrapper
+        block
+
+mixin popup-title()
+  +e.H2.title
+    block
+
+mixin popup-main-form()
+  +popup('main-form')
+    +popup-title Would you like a content creation app of your own for your business? Your app, your brand, powered by INFINITE CREATOR.
+    +form#main-form
+      +inputcol
+        +inputrow
+          +inputwrapper
+            +inputlabel Name
+            +inputbox._sm-fixed._light
+              +input(type="text", name="name", required=true)._sm-fixed._light
+          +inputwrapper
+            +inputlabel Job Title
+            +inputbox._sm-fixed._light
+              +input(type="text", name="job", required=true)._sm-fixed._light
+        +inputrow
+          +inputwrapper
+            +inputlabel Phone
+            +inputbox._sm-fixed._light
+              +input(data-mask="tel", type="tel", name="phone", required=true)._sm-fixed._light
+          +inputwrapper
+            +inputlabel Email
+            +inputbox._sm-fixed._light
+              +input(type="email", name="email", required=true)._sm-fixed._light
+        +inputwrapper
+          +inputlabel Message
+          +inputbox._sm-fixed._light
+            +textarea(name="message")._sm-fixed._light
+      p(data-message="success") Success message
+      p(data-message="error") Error
+      +e.links By clicking "Send", I agree to the <a href="./terms" target="_blank">Terms</a> & <a href="./privacy" target="_blank">Privacy</a>
+      +e.buttons
+        +button('button')._primary._xl Send
+
+mixin popup-country-code()
+  +popup('country-code')
+    +inputbox._lg._light
+      +input(data-mask="tel", type="tel")._lg._light
+    +button._primary._xl Send me invite

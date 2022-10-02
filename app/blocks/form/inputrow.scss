@@ -1,0 +1,18 @@
+.inputrow {
+  display: flex;
+
+  $this: &;
+
+  @include screen(sm) {
+    display: block;
+  }
+
+  > *:not(:first-child) {
+    margin-left: 40px;
+
+    @include screen(sm) {
+      margin-left: 0;
+      margin-top: 16px;
+    }
+  }
+}

@@ -258,24 +258,6 @@ $mobilePopupMargin: 30px !default;
       .inputbox_light & {
         color: color(dark);
       }
-
-      .inputbox_md & {
-        @include screen(lg) {
-          font-size: 14px;
-        }
-
-        @include screen(md) {
-          font-size: 11px;
-        }
-      }
-
-      .inputbox_sm & {
-        font-size: 13px;
-
-        @include screen(lg) {
-          font-size: 11px;
-        }
-      }
     }
   }
 

@@ -161,5 +161,10 @@
     display: flex;
     align-items: center;
     height: 40px;
+
+    @include screen(md) {
+      height: 30px;
+      margin-bottom: 20px;
+    }
   }
 }

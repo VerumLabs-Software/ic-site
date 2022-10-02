@@ -13,10 +13,8 @@ block content
 
     +footer('privacy-navigation')
 
-    +popup('country-code')
-      +inputbox._lg._light
-        +input(data-mask="tel", type="tel")._lg._light
-      +button._primary._xl Send me invite
+    +popup-main-form
+    +popup-country-code
 
     include ../../layouts/scripts
     script(src="assets/scripts/privacy.min.js")

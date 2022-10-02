@@ -2,34 +2,104 @@ $popupZindex: 1000;
 
 .popup {
   position: fixed;
+  display: flex;
+  align-items: center;
   z-index: $popupZindex;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   visibility: hidden;
   opacity: 0;
   transition: visibility $ease-main, opacity $ease-main;
+  box-sizing: border-box;
 
   $this: &;
+
+  [data-message] {
+    display: none;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20.7px;
+    text-align: center;
+    margin-top: 22px;
+
+    &.is-active {
+      display: block;
+    }
+  }
+
+  [data-message="error"] {
+    color: red;
+  }
+
+  [data-message="success"] {
+    color: green;
+  }
+
+  &[data-popup-wrapper="main-form"] {
+    .popup__container {
+      max-width: 900px;
+    }
+
+    .popup__wrapper {
+      padding: 80px 80px 40px;
+
+      @include screen(sm) {
+        padding: 63px 26px 40px;
+      }
+    }
+
+    .form__links {
+      margin-top: 22px;
+      width: 100%;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 20.7px;
+      text-align: center;
+
+      a {
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .form__buttons {
+      width: 100%;
+      text-align: center;
+    }
+
+    .button {
+      display: inline-block;
+      width: 120px;
+      text-align: center;
+    }
+  }
+
+  &[data-popup-wrapper="country-code"] {
+    .popup__container {
+      max-width: 460px;
+    }
+
+    .popup__wrapper {
+      padding: 48px 18px;
+    }
+  }
+
+  &__container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: param(container, padding-sm);
+    z-index: $popupZindex + 1;
+    width: 100%;
+  }
 
   .input {
     width: 100%;
     display: block;
-  }
-
-  .inputbox {
-    &_light {
-      .iti {
-        width: 100%;
-      }
-
-      .input {
-        border-right: 1px solid color(gray);
-        width: 100% !important;
-        border-radius: 4px;
-      }
-    }
   }
 
   .button {
@@ -42,23 +112,33 @@ $popupZindex: 1000;
     opacity: 1;
   }
 
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 32.5px;
+    margin-bottom: 22px;
+
+    @include screen(sm) {
+      font-size: 16px;
+      line-height: 26.5px;
+    }
+  }
+
   &__overlay {
     position: absolute;
     z-index: $popupZindex;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     background-color: rgba(color(black), 0.63);
     cursor: pointer;
   }
 
   &__wrapper {
-    @include center-block;
-    z-index: $popupZindex + 1;
-    width: 100%;
-    max-width: 260px;
-    padding: 48px 18px;
+    max-height: 80vh;
+    overflow: auto;
+    box-sizing: border-box;
     border-radius: radius(md);
     background-color: color(light);
   }

@@ -16,11 +16,8 @@
     "name": "Mobile app"
   },
   {
-    "href": "#clients",
-    "name": "Clients"
-  },
-  {
-    "href": "#join-us",
-    "name": "Join us"
+    "href": "#",
+    "name": "Enterprise",
+    "popup": "main-form"
   }
 ]

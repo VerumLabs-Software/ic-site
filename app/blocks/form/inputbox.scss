@@ -4,13 +4,45 @@
 
   $this: &;
 
-  .input {
+  .input,
+  .textarea {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: none;
 
     &_dark {
       background-color: rgba(color(dark), 0.2);
+    }
+  }
+
+  &_light {
+    .iti {
+      width: 100%;
+    }
+
+    .input,
+    .textarea {
+      border-right: 1px solid color(gray);
+      width: 100% !important;
+      border-radius: 4px;
+    }
+  }
+
+  &_sm {
+    font-size: 13px;
+
+    @include screen(lg) {
+      font-size: 11px;
+    }
+  }
+
+  &_md {
+    @include screen(lg) {
+      font-size: 14px;
+    }
+
+    @include screen(md) {
+      font-size: 11px;
     }
   }
 
@@ -22,10 +54,6 @@
   }
 
   &__label {
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 1.4;
-    color: rgba(color(dark), 0.5);
   }
 
   &__wrapper {

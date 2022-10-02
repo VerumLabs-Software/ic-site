@@ -2,17 +2,28 @@ mixin form()
   +b.FORM.form&attributes(attributes)
     block
 
+mixin inputwrapper()
+  +b.inputwrapper&attributes(attributes)
+    block
+
 mixin inputbox()
   +b.inputbox&attributes(attributes)
     block
 
-mixin label()
-  +e.P.label&attributes(attributes)
+mixin inputcol()
+  +b.inputcol&attributes(attributes)
     block
 
-mixin input-wrapper()
-  +e.wrapper&attributes(attributes)
+mixin inputrow()
+  +b.inputrow&attributes(attributes)
+    block
+
+mixin inputlabel()
+  +b.inputlabel&attributes(attributes)
     block
 
 mixin input()
   +b.INPUT.input&attributes(attributes)
+
+mixin textarea()
+  +b.TEXTAREA.textarea&attributes(attributes)

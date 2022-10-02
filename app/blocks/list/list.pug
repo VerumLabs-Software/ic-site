@@ -2,7 +2,9 @@ mixin list(json)
   +b.UL.list&attributes(attributes)
     each item in json
       +e.LI.item
-        if (!item.external)
+        if (item.popup)
+          +e.A(href=item.href, data-popup-trigger=item.popup).link.js-prevent!=item.name
+        else if (!item.external)
           +e.A(href=item.href).link.js-anchor!=item.name
         else
           +e.A(href=item.href).link!=item.name
