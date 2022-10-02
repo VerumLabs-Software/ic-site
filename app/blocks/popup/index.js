@@ -1,5 +1,3 @@
-import {disableBodyScroll, enableBodyScroll} from "body-scroll-lock";
-
 export default function popup() {
   const popupTriggers = document.querySelectorAll("[data-popup-trigger]");
   const popupCloseButtons = document.querySelectorAll("[data-popup-close]");
@@ -14,7 +12,6 @@ export default function popup() {
 
     if (!popupWrapper) return;
 
-    // disableBodyScroll(popupWrapper);
     popupWrapper.classList.add("is-active");
   };
 
@@ -26,7 +23,6 @@ export default function popup() {
 
     if (!popupWrapper) return;
 
-    // enableBodyScroll(popupWrapper);
     popupWrapper.classList.remove("is-active");
   };
 

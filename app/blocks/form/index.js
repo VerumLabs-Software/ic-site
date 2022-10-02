@@ -26,7 +26,7 @@ export default function form() {
     errorMessage.classList.remove("is-active");
 
     fetch(scriptURL, {method: "POST", body: formData})
-      .then(response => {
+      .then(() => {
         mainForm.reset();
         successMessage.classList.add("is-active");
         successMessage.innerHTML = "Form submitted successfully!";
@@ -53,7 +53,7 @@ export default function form() {
         input.setAttribute("placeholder", selectedCountryPlaceholder);
 
         const updatedCountryPlaceholder = selectedCountryPlaceholder.replace(
-          /[0-9]/g,
+          /\d/g,
           9,
         );
 
