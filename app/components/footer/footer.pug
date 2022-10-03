@@ -13,7 +13,5 @@ mixin footer(listData)
           +list(getData(listData))._md._light-gray.__list
           +e.copyright &#169; #{year} Infinite Creator
         +e.buttons
-          +button._dark._google-play.__button
-            +image-svg('google-play')
-          +button._dark._app-store.__button
-            +image-svg('app-store')
+          +button-google-play._dark._google-play.__button
+          +button-app-store._dark._app-store.__button

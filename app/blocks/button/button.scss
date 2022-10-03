@@ -1,5 +1,8 @@
 .button {
-  display: inline-block;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   vertical-align: top;
   border-radius: radius(sm);
   line-height: 1.2;
@@ -148,6 +151,31 @@
     transition: transform $ease-main;
   }
 
+  &.is-loading {
+    cursor: not-allowed;
+    pointer-events: none;
+
+    > div {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      font-size: 2px;
+      width: 12em;
+      height: 12em;
+      position: absolute;
+      text-indent: -9999em;
+      border-width: 1.5em;
+      border-style: solid;
+      border-radius: 50%;
+      border-color: rgba(color(light), 0.4);
+      border-left-color: color(light);
+      transform: translate(-50%, -50%);
+      animation: load8 1.1s infinite linear;
+    }
+  }
+
   &[disabled] {
     opacity: 0.5;
     cursor: not-allowed;
@@ -159,5 +187,15 @@
     svg {
       transform: translate3d(3px, 0, 0);
     }
+  }
+}
+
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }

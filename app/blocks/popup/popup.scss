@@ -69,11 +69,12 @@ $popupZindex: 1000;
 
     .form__buttons {
       width: 100%;
+      display: flex;
+      justify-content: center;
       text-align: center;
     }
 
     .button {
-      display: inline-block;
       width: 120px;
       text-align: center;
     }
@@ -86,6 +87,10 @@ $popupZindex: 1000;
 
     .popup__wrapper {
       padding: 48px 18px;
+    }
+
+    .button {
+      display: flex;
     }
   }
 
@@ -104,7 +109,6 @@ $popupZindex: 1000;
 
   .button {
     margin-top: 21px;
-    display: block;
   }
 
   &.is-active {

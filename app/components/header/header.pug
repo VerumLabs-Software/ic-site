@@ -5,10 +5,8 @@ mixin header()
         +image-svg('logo').__logo
         +list(getData('navigation'))._sm._bold._light.__list
         +e.download-buttons.hide-lg
-          +button._xs._dark._app-store
-            +image-svg('app-store')
-          +button._xs._dark._google-play
-            +image-svg('google-play')
+          +button-app-store._xs._dark._app-store
+          +button-google-play._xs._dark._google-play
     +e.IMG(src='', alt='')#about-phone.__image.hide-sm
     .container.header__content
       +icon('logo').show-sm.__logo-mini

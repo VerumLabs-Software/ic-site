@@ -9,6 +9,7 @@ export default function form() {
   const scriptURL =
     "https://script.google.com/macros/s/AKfycbwq7nCRfnNyXkzo3obxg_0me6h1tNDoSQtD0T1l7t02CXxq7EKZTH-8MAsPzDD_Kxq1/exec";
   const mainForm = document.getElementById("main-form");
+  const submitButton = mainForm.querySelector("#submit-btn");
   const successMessage = mainForm.querySelector('[data-message="success"]');
   const errorMessage = mainForm.querySelector('[data-message="error"]');
   const telInputs = document.querySelectorAll('input[type="tel"]');
@@ -22,6 +23,7 @@ export default function form() {
 
     formData.set("phone", `+${phoneDialCode} ${formData.get("phone")}`);
 
+    submitButton.classList.add("is-loading");
     successMessage.classList.remove("is-active");
     errorMessage.classList.remove("is-active");
 
@@ -34,6 +36,9 @@ export default function form() {
       .catch(error => {
         errorMessage.classList.add("is-active");
         errorMessage.innerHTML = error.message;
+      })
+      .finally(() => {
+        submitButton.classList.remove("is-loading");
       });
   });
 
