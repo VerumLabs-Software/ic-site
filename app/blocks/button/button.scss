@@ -161,12 +161,12 @@
 
     &::before {
       content: "";
-      font-size: 2px;
+      font-size: 1.75px;
       width: 12em;
       height: 12em;
       position: absolute;
       text-indent: -9999em;
-      border-width: 1.5em;
+      border-width: 2em;
       border-style: solid;
       border-radius: 50%;
       border-color: rgba(color(light), 0.4);
