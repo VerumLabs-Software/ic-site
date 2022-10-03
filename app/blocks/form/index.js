@@ -7,7 +7,7 @@ import Inputmask from "inputmask";
 
 export default function form() {
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbw_I0dErITL5lx5S4BFhJuBvk_Dv_auKe2m5IUmTaJyWAFTSEa5eAZyZ-aqE6WLCp47/exec";
+    "https://script.google.com/macros/s/AKfycbwq7nCRfnNyXkzo3obxg_0me6h1tNDoSQtD0T1l7t02CXxq7EKZTH-8MAsPzDD_Kxq1/exec";
   const mainForm = document.getElementById("main-form");
   const successMessage = mainForm.querySelector('[data-message="success"]');
   const errorMessage = mainForm.querySelector('[data-message="error"]');
