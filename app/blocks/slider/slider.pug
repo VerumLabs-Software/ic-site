@@ -5,6 +5,7 @@
 //-   +slide Привет
 //-   +slide Привет
 
+//- Need sync with createSlide function
 mixin slider(pagination, buttons)
   +b.slider&attributes(attributes)
     .swiper-container.js-slider-container
@@ -23,6 +24,7 @@ mixin slider(pagination, buttons)
         +e.button.js-slider-button-next
           +icon('arrow-right')
 
+//- Need sync with createSlide function
 mixin slide()
   +e.slide&attributes(attributes).swiper-slide
     block

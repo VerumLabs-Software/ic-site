@@ -2,8 +2,10 @@ mixin section-youtube()
   +b.SECTION(data-section="").section-youtube#join-us&attributes(attributes)
     .container
       +title Join us in YouTube
-      +slider(false, false).__slider.js-slider-free
-        each video in getData('youtube-videos')
+      +slider(false, false).__slider.js-slider-free#slider-youtube
+        each video in [1, 2, 3, 4, 5]
           +slide
-            +video-block(video)
+            +skeleton(style="height:204px")
+            +skeleton(style="height:30px;margin-top:25px;")
+            //- +video-block(video)
 

@@ -20,13 +20,8 @@
     "external": true
   },
   {
-    "href": "./#clients",
-    "name": "Clients",
-    "external": true
-  },
-  {
-    "href": "./#join-us",
-    "name": "Join us",
-    "external": true
+    "href": "#",
+    "name": "Enterprise",
+    "popup": "main-form"
   }
 ]

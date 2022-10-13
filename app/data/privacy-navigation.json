@@ -30,6 +30,11 @@
     "external": true
   },
   {
+    "href": "#",
+    "name": "Enterprise",
+    "popup": "main-form"
+  },
+  {
     "href": "#privacy",
     "name": "Privacy policy"
   },

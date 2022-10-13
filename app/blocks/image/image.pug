@@ -1,16 +1,16 @@
+//- Need sync with createImage function
 mixin image-jpg(src, alt)
   +b.image&attributes(attributes)
     picture
       source(srcset=`assets/images/${src}.webp`, type='image/webp')
-      source(srcset=`assets/images/${src}.jpg`, type='image/jpeg')
       img(src=`assets/images/${src}.jpg`, alt=alt || '')
     block
 
+//- Need sync with createImage function
 mixin image-png(src, alt)
   +b.image&attributes(attributes)
     picture
       source(srcset=`assets/images/${src}.webp`, type='image/webp')
-      source(srcset=`assets/images/${src}.png`, type='image/png')
       img(src=`assets/images/${src}.png`, alt=alt || '')
     block
 

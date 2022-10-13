@@ -12,7 +12,7 @@ mixin section-how-it-works()
           +tab-cards
             each tab in getData('how-it-works-tabs')
               +tab-card(tab)
-      +slider(false, false).__slider.show-sm.js-slider-free
+      +slider(false, false).__slider.show-sm.js-slider-free#slider-how-it-works
         each tab in getData('how-it-works-tabs')
           +slide
             +tab-card(tab)
