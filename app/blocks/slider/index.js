@@ -115,6 +115,7 @@ export default function slider() {
 
       playlistItemsUrl.search = new URLSearchParams({
         key: API_KEY,
+        maxResults: 50,
         playlistId: "PLtbWm39DbODxgbVRU8odMGWVK3yOMdwVF",
         part: ["snippet"].join(","),
       });
@@ -152,7 +153,7 @@ export default function slider() {
 
               for (const item of data.items) {
                 const {
-                  snippet,
+                  snippet: {title, channelTitle, thumbnails},
                   contentDetails: {duration},
                 } = item;
 
@@ -164,12 +165,18 @@ export default function slider() {
 
                 const slide = createSlide({
                   time,
+                  title,
+                  subtitle: channelTitle,
                   link: `https://youtube.com/watch?v=${item.id}`,
-                  title: snippet.title,
-                  subtitle: snippet.channelTitle,
                   image: {
-                    src: snippet.thumbnails.maxres.url,
-                    alt: snippet.title,
+                    src: (
+                      thumbnails.maxres ||
+                      thumbnails.standard ||
+                      thumbnails.high ||
+                      thumbnails.medium ||
+                      thumbnails.default
+                    ).url,
+                    alt: title,
                   },
                 });
 
