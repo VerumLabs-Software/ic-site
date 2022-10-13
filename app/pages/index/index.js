@@ -3,6 +3,7 @@ import objectFitImages from "object-fit-images";
 import "jquery-parallax.js";
 import "../../scripts/globalOptions";
 
+import sms from "../../scripts/sms";
 import geo from "../../scripts/geo";
 import menu from "../../blocks/menu";
 import tabs from "../../blocks/tabs";
@@ -20,6 +21,7 @@ import sectionAchivementsPromo from "../../components/section-achivements-promo"
 const {$} = window;
 
 $(() => {
+  sms();
   geo();
   menu();
   form();

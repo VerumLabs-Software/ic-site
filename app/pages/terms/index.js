@@ -2,6 +2,7 @@ import svg4everybody from "svg4everybody";
 import objectFitImages from "object-fit-images";
 import "../../scripts/globalOptions";
 
+import sms from "../../scripts/sms";
 import menu from "../../blocks/menu";
 import form from "../../blocks/form";
 import popup from "../../blocks/popup";
@@ -13,6 +14,7 @@ import fixedHeader from "../../components/fixed-header";
 const {$} = window;
 
 $(() => {
+  sms();
   form();
   menu();
   popup();

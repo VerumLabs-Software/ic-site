@@ -23,6 +23,10 @@
     background-color: rgba(color(black), 0.5);
   }
 
+  [data-message] {
+    margin-top: 10px;
+  }
+
   @include screen(lg) {
     padding-top: 35px;
     padding-bottom: 204px;
@@ -36,6 +40,12 @@
   @include screen(sm) {
     padding-top: 46px;
     padding-bottom: 50px;
+  }
+
+  &__form {
+    // .inputbox .button {
+    //   min-width: 57px;
+    // }
   }
 
   &__nav {

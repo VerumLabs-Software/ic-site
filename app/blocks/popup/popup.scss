@@ -17,24 +17,10 @@ $popupZindex: 1000;
   $this: &;
 
   [data-message] {
-    display: none;
     font-size: 14px;
-    font-weight: 500;
     line-height: 20.7px;
     text-align: center;
     margin-top: 22px;
-
-    &.is-active {
-      display: block;
-    }
-  }
-
-  [data-message="error"] {
-    color: red;
-  }
-
-  [data-message="success"] {
-    color: green;
   }
 
   &[data-popup-wrapper="main-form"] {
@@ -91,7 +77,24 @@ $popupZindex: 1000;
 
     .button {
       display: flex;
+      width: 100%;
     }
+  }
+
+  &__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 10px;
+    transition: $ease-main opacity;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  &__close-icon {
+    @include size(18px, max);
   }
 
   &__container {
@@ -140,6 +143,7 @@ $popupZindex: 1000;
   }
 
   &__wrapper {
+    position: relative;
     max-height: 80vh;
     overflow: auto;
     box-sizing: border-box;

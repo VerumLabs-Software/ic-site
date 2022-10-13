@@ -13,6 +13,25 @@
   visibility: hidden;
 }
 
+[data-message] {
+  display: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20.7px;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+[data-message="error"] {
+  color: color(error);
+}
+
+[data-message="success"] {
+  color: color(success);
+}
+
 @each $key, $val in $breakpoints {
   .hide-#{$key} {
     @include screen(#{$key}) {

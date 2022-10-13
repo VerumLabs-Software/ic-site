@@ -1,8 +1,11 @@
-mixin popup(name)
+mixin popup(name, withClose=false)
   +b.popup(data-popup-wrapper=name)&attributes(attributes)
     +e.overlay(data-popup-close=name)
     +e.container
       +e.wrapper
+        if withClose
+          +e.BUTTON(type="button", data-popup-close=name).close
+            +icon('close').__close-icon
         block
 
 mixin popup-title()
@@ -10,7 +13,7 @@ mixin popup-title()
     block
 
 mixin popup-main-form()
-  +popup('main-form')
+  +popup('main-form', true)
     +popup-title Would you like a content creation app of your own for your business? Your app, your brand, powered by INFINITE CREATOR.
     +form#main-form
       +inputcol
@@ -27,7 +30,7 @@ mixin popup-main-form()
           +inputwrapper
             +inputlabel Phone
             +inputbox._sm-fixed._light
-              +input(data-mask="tel", type="tel", name="phone", required=true)._sm-fixed._light
+              +input-phone._sm-fixed._light
           +inputwrapper
             +inputlabel Email
             +inputbox._sm-fixed._light
@@ -36,14 +39,17 @@ mixin popup-main-form()
           +inputlabel Message
           +inputbox._sm-fixed._light
             +textarea(name="message")._sm-fixed._light
-      p(data-message="success") Success message
-      p(data-message="error") Error
+      p(data-message="success")
+      p(data-message="error")
       +e.links By clicking "Send", I agree to the <a href="./terms" target="_blank">Terms</a> & <a href="./privacy" target="_blank">Privacy</a>
       +e.buttons
-        +button('button')#submit-btn._primary._xl Send
+        +button('button')(data-submit="")._primary._xl Send
 
 mixin popup-country-code()
   +popup('country-code')
-    +inputbox._lg._light
-      +input(data-mask="tel", type="tel")._lg._light
-    +button._primary._xl Send me invite
+    +form(data-invite="", method="POST")
+      +inputbox._lg._light
+        +input-phone._lg._light
+      p(data-message="success")
+      p(data-message="error")
+      +button('button')(data-submit="")._primary._xl Send me invite

@@ -156,12 +156,12 @@
     pointer-events: none;
 
     > div {
-      display: none;
+      visibility: hidden;
     }
 
     &::before {
       content: "";
-      font-size: 1.75px;
+      font-size: 0.1075em;
       width: 12em;
       height: 12em;
       position: absolute;

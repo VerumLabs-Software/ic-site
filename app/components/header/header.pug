@@ -13,10 +13,12 @@ mixin header()
       +burger._light.js-burger.show-sm
       +e.text-content
         +title('h1')._light.__title Professional real estate content creation that’s fast, easy & affordable.<br><br><span>Delivered within 24 hours</span>
-        +form.__form
+        +form(data-invite="", method="POST").__form
           +inputbox._md._dark.hide-sm.__inputbox
-            +input(data-mask="tel", type="tel", autocomplete="on", required="")._md._dark
-            +button('button')._primary._lg Send me invite
+            +input-phone._md._dark
+            +button('button')(data-submit="")._primary._lg Send me invite
+          p(data-message="success")
+          p(data-message="error")
           .header__buttons.show-sm
-            +button._lg._primary Download app
+            +button(href="https://infinitecreator.app.link/app", target="_blank")._lg._primary Download app
             +button(data-popup-trigger="country-code")._lg._dark Send me invite

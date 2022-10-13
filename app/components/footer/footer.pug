@@ -6,9 +6,12 @@ mixin footer(listData)
         +e.main
           +e.main-top
             +image-svg('logo-branded-secondary').__logo
-            +inputbox._sm._dark.__inputbox.hide-sm
-              +input(data-mask="tel", type="tel")._sm._dark
-              +button._sm._primary Send me invite
+            +form(data-invite="", method="POST").__form
+              +inputbox._sm._dark.__inputbox.hide-sm
+                +input-phone._sm._dark
+                +button('button')(data-submit="")._sm._primary Send me invite
+              p(data-message="success")
+              p(data-message="error")
             +button(data-popup-trigger="country-code")._sm._primary.show-sm Send me invite
           +list(getData(listData))._md._light-gray.__list
           +e.copyright &#169; #{year} Infinite Creator

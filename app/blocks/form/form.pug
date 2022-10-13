@@ -27,3 +27,6 @@ mixin input()
 
 mixin textarea()
   +b.TEXTAREA.textarea&attributes(attributes)
+
+mixin input-phone()
+  +b.INPUT.input(data-mask="tel", type="tel", autocomplete="on", name="phone", required="")&attributes(attributes)
