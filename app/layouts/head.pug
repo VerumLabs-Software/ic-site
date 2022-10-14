@@ -2,13 +2,36 @@ head
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimal-ui')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  block head
-  title=('Infinite Creator. Videos That Sell' + pageTitle || '')
-  meta(name='description' content=pageDescription || '')
-  meta(name='keywords' content=pageKeywords || '')
+
+  - const origin = 'https://infinitecreator.com/';
+  - const preview = origin + 'assets/images/preview.png'
+  - const title = 'Infinite Creator. Videos That Sell';
+  - const description = 'Meet Infinite Creator, the revolutionary technology that empowers you to create listing content on the fly anywhere in the world with just your mobile phone.';
+
+  //- Primary Meta Tags
+  title=title
+  meta(name="title" content=title)
+  meta(name="description" content=description)
+
+  //- Open Graph / Facebook
+  meta(property="og:type" content="website")
+  meta(property="og:url" content=origin)
+  meta(property="og:title" content=title)
+  meta(property="og:description" content=description)
+  meta(property="og:image" content=preview)
+
+  //- Twitter
+  meta(property="twitter:card" content="summary_large_image")
+  meta(property="twitter:url" content=origin)
+  meta(property="twitter:title" content=title)
+  meta(property="twitter:description" content=description)
+  meta(property="twitter:image" content=preview)
+
+  //- Additional
   link(href='favicon.ico' rel='shortcut icon')
   link(href='site.webmanifest' ref='manifest')
   link(href='assets/styles/app.min.css' rel='stylesheet')
 
+  //- Scripts
   script(src="assets/scripts/head.min.js")
   script(src='assets/scripts/libs/webp-modernizr.min.js')
