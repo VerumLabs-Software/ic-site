@@ -1,18 +1,21 @@
-const {$, Modernizr} = window;
+const {$, Modernizr, devicePixelRatio} = window;
 const TOKEN = "07b953baf2128e";
 
 export default function geo() {
   const section = document.getElementById("about");
   const phone = document.querySelector("#about-phone");
+  const dpr = Math.min(Math.max(devicePixelRatio, 1), 3);
+  const postfix = dpr > 1 ? `@${dpr}x` : "";
 
   const changeImagesByLocation = destination => {
     section.style.setProperty(
       "background-image",
-      `url('assets/images/about/${destination}/bg.${
+      `url('assets/images/about/${destination}/bg${postfix}.${
         Modernizr.webp ? "webp" : "jpg"
       }')`,
     );
-    phone.src = `assets/images/about/${destination}/phone.${
+
+    phone.src = `assets/images/about/${destination}/phone${postfix}.${
       Modernizr.webp ? "webp" : "png"
     }`;
   };

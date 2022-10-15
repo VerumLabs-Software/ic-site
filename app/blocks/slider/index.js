@@ -5,6 +5,7 @@ import {createVideoBlock} from "../video-block";
 const {globalOptions} = window;
 
 const API_KEY = "AIzaSyBE5rt_cEGFQ6tn-M43PPcWeEuoVCqZcOo";
+const YOUTUBE_API = "https://www.googleapis.com/youtube/v3";
 
 const headers = {
   "Content-Type": "application/json",
@@ -109,9 +110,7 @@ export default function slider() {
     });
 
     if (slider.id === "slider-youtube") {
-      const playlistItemsUrl = new URL(
-        "https://www.googleapis.com/youtube/v3/playlistItems",
-      );
+      const playlistItemsUrl = new URL(`${YOUTUBE_API}/playlistItems`);
 
       playlistItemsUrl.search = new URLSearchParams({
         key: API_KEY,
@@ -133,9 +132,7 @@ export default function slider() {
             videoIds.push(snippet.resourceId.videoId);
           }
 
-          const videosUrl = new URL(
-            "https://www.googleapis.com/youtube/v3/videos",
-          );
+          const videosUrl = new URL(`${YOUTUBE_API}/videos`);
 
           videosUrl.search = new URLSearchParams({
             key: API_KEY,
