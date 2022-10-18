@@ -11,7 +11,6 @@ module.exports = () => ({
   entry: {
     head: path.resolve("./app/scripts/head"),
     app: path.resolve("./app/pages/index"),
-    landing: path.resolve("./app/pages/ef3ace15"),
     privacy: path.resolve("./app/pages/privacy"),
     terms: path.resolve("./app/pages/terms"),
     404: path.resolve("./app/pages/404"),

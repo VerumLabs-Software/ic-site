@@ -6,6 +6,7 @@ const {globalOptions} = window;
 
 const API_KEY = "AIzaSyBE5rt_cEGFQ6tn-M43PPcWeEuoVCqZcOo";
 const YOUTUBE_API = "https://www.googleapis.com/youtube/v3";
+const PLAYLIST_ID = "PLCty5Rh53BpdETow4QJpE_DH1zZ039qw0";
 
 const headers = {
   "Content-Type": "application/json",
@@ -115,7 +116,7 @@ export default function slider() {
       playlistItemsUrl.search = new URLSearchParams({
         key: API_KEY,
         maxResults: 50,
-        playlistId: "PLtbWm39DbODxgbVRU8odMGWVK3yOMdwVF",
+        playlistId: PLAYLIST_ID,
         part: ["snippet"].join(","),
       });
 
@@ -146,6 +147,8 @@ export default function slider() {
           })
             .then(res => res.json())
             .then(data => {
+              if (data.items.length === 0) return;
+
               swiper.removeAllSlides();
 
               for (const item of data.items) {

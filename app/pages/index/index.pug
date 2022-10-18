@@ -2,29 +2,25 @@ extends ../../layouts/default
 
 block content
   body.index-page
-    //- +header
-    //- +fixed-header('navigation').hide-sm.js-nav
-    //- +menu('full-navigation').show-sm
+    +header
+    +fixed-header('navigation').hide-sm.js-nav
+    +menu('full-navigation').show-sm
 
+    main
+      +section-how-it-works
+      +section-empowering
+      +section-achivements-promo
+      +section-achivements
+      +section-mobile-app
+      +section-clients
+      +section-youtube
+      +section-socials
 
-    main.main
-      +section-soon
-      //- +section-empowering
-      //- +section-how-it-works
-      //- +section-achivements-promo
-      //- +section-achivements
-      //- +section-mobile-app
-      //- +section-clients
-      //- +section-youtube
-      //- +section-socials
+    +footer('full-navigation')
 
-    //- +footer('full-navigation')
+    +popup-main-form
+    +popup-country-code
 
-    //- +popup('country-code')
-    //-   +inputbox._lg._light
-    //-     +input(data-mask="tel", type="tel")._lg._light
-    //-   +button._primary._xl Send me invite
-
-    //- include ../../layouts/scripts
-    //- script(src="//unpkg.com/typewriter-effect@latest/dist/core.js")
-    //- script(src="assets/scripts/app.min.js")
+    include ../../layouts/scripts
+    script(src="//unpkg.com/typewriter-effect@latest/dist/core.js")
+    script(src="assets/scripts/app.min.js")
