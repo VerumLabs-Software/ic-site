@@ -13,7 +13,7 @@ export default function sectionAchivementsPromo() {
     },
     {
       icon: "rocket",
-      text: "Featured<br><strong>by the likes Forbes, Bloomberg & CNBC</strong>",
+      text: "Featured<br><strong>by the likes of Forbes, Bloomberg & CNBC</strong>",
     },
     {
       icon: "youtube",
