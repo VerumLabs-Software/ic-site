@@ -1,6 +1,5 @@
 import svg4everybody from "svg4everybody";
 import objectFitImages from "object-fit-images";
-import "jquery-parallax.js";
 import "../../scripts/globalOptions";
 
 import sms from "../../scripts/sms";
@@ -13,14 +12,13 @@ import popup from "../../blocks/popup";
 import slider from "../../blocks/slider";
 import burger from "../../blocks/burger";
 import anchor from "../../scripts/anchor";
+import parallax from "../../scripts/parallax";
 
 import fixedHeader from "../../components/fixed-header";
 import sectionEmpowering from "../../components/section-empowering";
 import sectionAchivementsPromo from "../../components/section-achivements-promo";
 
-const {$} = window;
-
-$(() => {
+window.addEventListener("load", () => {
   sms();
   geo();
   menu();
@@ -31,6 +29,7 @@ $(() => {
   slider();
   burger();
   anchor();
+  parallax();
   fixedHeader();
   svg4everybody();
   objectFitImages();

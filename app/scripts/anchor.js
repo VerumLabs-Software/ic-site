@@ -1,20 +1,28 @@
 // При клике на .js-anchor страница плавно скроллится к блоку, указанному в его href
-const {$} = window;
-
 export default function anchor() {
-  $(document).on("click", ".js-anchor", function (e) {
-    e.preventDefault();
+  const links = document.querySelectorAll(".js-anchor");
 
-    const target = $($(this).attr("href"));
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    const element = document.querySelector(href);
+    const elementPos = element.getBoundingClientRect().top;
+    const offsetPos = elementPos + window.scrollY;
 
-    if (target.length > 0) {
-      $("body, html")
-        .stop()
-        .animate({scrollTop: target.offset().top}, 1000, "swing");
-    }
+    link.addEventListener("click", e => {
+      e.preventDefault();
+
+      window.scrollTo({
+        top: offsetPos,
+        behavior: "smooth",
+      });
+    });
   });
 
-  $(document).on("click", ".js-prevent", function (e) {
-    e.preventDefault();
+  const prevents = document.querySelectorAll(".js-prevent");
+
+  prevents.forEach(prevent => {
+    prevent.addEventListener("click", e => {
+      e.preventDefault();
+    });
   });
 }

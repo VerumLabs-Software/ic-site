@@ -22,6 +22,3 @@ mixin image-svg(src, alt)
   +b.image&attributes(attributes)
     img(src=`assets/images/${src}.svg`, alt=alt || '')
     block
-
-mixin parallax-image(src)
-  +b.parallax-image(data-parallax="scroll", data-image-src=`assets/images/${src}.png`)&attributes(attributes)

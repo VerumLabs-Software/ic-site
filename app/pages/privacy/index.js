@@ -11,9 +11,7 @@ import anchor from "../../scripts/anchor";
 
 import fixedHeader from "../../components/fixed-header";
 
-const {$} = window;
-
-$(() => {
+window.addEventListener("load", () => {
   sms();
   form();
   menu();

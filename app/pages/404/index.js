@@ -4,9 +4,7 @@ import "../../scripts/globalOptions";
 
 import scrollable from "../../scripts/scrollable";
 
-const {$} = window;
-
-$(() => {
+window.addEventListener("load", () => {
   scrollable();
   svg4everybody();
   objectFitImages();
