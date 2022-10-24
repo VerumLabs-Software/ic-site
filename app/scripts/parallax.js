@@ -4,6 +4,8 @@ export default function parallax() {
   const images = document.querySelectorAll("[data-parallax] img");
 
   new SimpleParallax(images, {
-    scale: 1.75,
+    delay: 0.6,
+    scale: 1.5,
+    transition: "cubic-bezier(0,0,0,1)",
   });
 }
