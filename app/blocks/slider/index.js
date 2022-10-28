@@ -95,17 +95,17 @@ export default function slider() {
       slideToClickedSlide: true,
       breakpoints: {
         [globalOptions.sizes.xs]: {
-          slidesPerView: 1.6,
+          slidesPerView: 2,
         },
         [globalOptions.sizes.sm]: {
-          slidesPerView: 4.2,
+          slidesPerView: 4.5,
           spaceBetween: 18,
         },
         [globalOptions.sizes.md]: {
-          slidesPerView: 4.2,
+          slidesPerView: 3.6,
         },
         [globalOptions.sizes.lg]: {
-          slidesPerView: 4,
+          slidesPerView: 3,
         },
       },
     });
