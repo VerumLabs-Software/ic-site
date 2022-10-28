@@ -14,7 +14,7 @@ export default function analytics() {
     follow_fb_clicked: "click",
   };
 
-  mixpanel.init(MIXPANEL_TOKEN, {debug: true});
+  mixpanel.init(MIXPANEL_TOKEN);
   mixpanel.register({
     app_type: "ic_landing",
   });
