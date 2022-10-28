@@ -1,9 +1,11 @@
+import mixpanel from "mixpanel-browser";
 import {createImage} from "../image";
 import {createIcon} from "../icon";
 
-const blockClass = "video-block";
-
 export const createVideoBlock = ({image, time, link, title, subtitle}) => {
+  const blockClass = "video-block";
+  const analyticsEvent = "video_clicked";
+
   const _link = document.createElement("a");
   const icon = createIcon("play-circle");
   const _time = document.createElement("span");
@@ -18,7 +20,12 @@ export const createVideoBlock = ({image, time, link, title, subtitle}) => {
 
   _link.href = link;
   _link.target = "_blank";
+  _link.dataset.analytics = analyticsEvent;
   _link.classList.add(blockClass);
+
+  _link.addEventListener("click", () => {
+    mixpanel.track(analyticsEvent, {link});
+  });
 
   _link.appendChild(_image);
 

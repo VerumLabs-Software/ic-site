@@ -13,12 +13,14 @@ import slider from "../../blocks/slider";
 import burger from "../../blocks/burger";
 import anchor from "../../scripts/anchor";
 import parallax from "../../scripts/parallax";
+import analytics from "../../scripts/analytics";
 
 import fixedHeader from "../../components/fixed-header";
 import sectionEmpowering from "../../components/section-empowering";
 import sectionAchivementsPromo from "../../components/section-achivements-promo";
 
 window.addEventListener("load", () => {
+  analytics();
   sms();
   geo();
   menu();

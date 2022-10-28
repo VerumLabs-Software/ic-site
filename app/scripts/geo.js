@@ -1,11 +1,11 @@
 import {getDPRPostfix, getImageExtension} from "./helpers";
 
-const TOKEN = "07b953baf2128e";
-const headers = {
-  "Content-Type": "application/json",
-};
-
 export default function geo() {
+  const TOKEN = "07b953baf2128e";
+  const headers = {
+    "Content-Type": "application/json",
+  };
+
   const section = document.getElementById("about");
   const phone = document.querySelector("#about-phone");
   const postfix = getDPRPostfix();

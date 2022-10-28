@@ -32,7 +32,8 @@
   {
     "href": "#",
     "name": "Enterprise",
-    "popup": "main-form"
+    "popup": "main-form",
+    "analytics": "enterprise_clicked"
   },
   {
     "href": "./privacy",

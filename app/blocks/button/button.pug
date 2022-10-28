@@ -4,11 +4,11 @@ mixin button(tag)
       block
 
 mixin button-app-store()
-  +b('a').button(tabindex="0", href="https://apps.apple.com/us/app/infinite-creator/id1616340639", target="_blank")&attributes(attributes)
+  +b('a').button(tabindex="0", href="https://apps.apple.com/us/app/infinite-creator/id1616340639", target="_blank", data-analytics="app_store_clicked")&attributes(attributes)
     div
       +image-svg('app-store')
 
 mixin button-google-play()
-  +b('a').button(tabindex="0", href="https://play.google.com/store/apps/details?id=com.infinitecreator.app.prod", target="_blank")&attributes(attributes)
+  +b('a').button(tabindex="0", href="https://play.google.com/store/apps/details?id=com.infinitecreator.app.prod", target="_blank", data-analytics="google_play_clicked")&attributes(attributes)
     div
       +image-svg('google-play')

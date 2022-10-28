@@ -6,7 +6,7 @@ mixin footer(listData)
         +e.main
           +e.main-top
             +image-svg('logo-branded-secondary').__logo
-            +form(data-invite="", method="POST").__form
+            +form(data-invite="", method="POST", data-analytics="get_link_clicked").__form
               +inputbox._sm._dark.__inputbox.hide-sm
                 +input-phone._sm._dark
                 +button('button')(data-submit="")._sm._primary Send me invite

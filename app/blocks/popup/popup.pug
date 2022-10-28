@@ -15,7 +15,7 @@ mixin popup-title()
 mixin popup-main-form()
   +popup('main-form', true)
     +popup-title Would you like a content creation app of your own for your business? Your app, your brand, powered by INFINITE CREATOR.
-    +form#main-form
+    +form(data-analytics="enterprise_form_submitted")#main-form
       +inputcol
         +inputrow
           +inputwrapper
@@ -47,7 +47,7 @@ mixin popup-main-form()
 
 mixin popup-country-code()
   +popup('country-code')
-    +form(data-invite="", method="POST")
+    +form(data-invite="", method="POST", data-analytics="get_link_clicked")
       +inputbox._lg._light
         +input-phone._lg._light
       p(data-message="success")
