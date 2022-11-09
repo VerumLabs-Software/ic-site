@@ -86,6 +86,37 @@ export default function slider() {
 
   const renderFreeSlider = slider => {
     const container = slider.querySelector(".js-slider-container");
+    const defaultBreakpoints = {
+      [globalOptions.sizes.xs]: {
+        slidesPerView: 1.6,
+      },
+      [globalOptions.sizes.sm]: {
+        slidesPerView: 4.2,
+        spaceBetween: 18,
+      },
+      [globalOptions.sizes.md]: {
+        slidesPerView: 4.2,
+      },
+      [globalOptions.sizes.lg]: {
+        slidesPerView: 4,
+      },
+    };
+
+    const youtubeSliderBreakpoints = {
+      [globalOptions.sizes.xs]: {
+        slidesPerView: 2,
+      },
+      [globalOptions.sizes.sm]: {
+        slidesPerView: 4.5,
+        spaceBetween: 18,
+      },
+      [globalOptions.sizes.md]: {
+        slidesPerView: 3.6,
+      },
+      [globalOptions.sizes.lg]: {
+        slidesPerView: 3,
+      },
+    };
 
     const swiper = new Swiper(container, {
       ...defaultOptions,
@@ -93,21 +124,10 @@ export default function slider() {
       spaceBetween: 30,
       freeMode: true,
       slideToClickedSlide: true,
-      breakpoints: {
-        [globalOptions.sizes.xs]: {
-          slidesPerView: 2,
-        },
-        [globalOptions.sizes.sm]: {
-          slidesPerView: 4.5,
-          spaceBetween: 18,
-        },
-        [globalOptions.sizes.md]: {
-          slidesPerView: 3.6,
-        },
-        [globalOptions.sizes.lg]: {
-          slidesPerView: 3,
-        },
-      },
+      breakpoints:
+        slider.id === "slider-youtube"
+          ? youtubeSliderBreakpoints
+          : defaultBreakpoints,
     });
 
     if (slider.id === "slider-youtube") {
