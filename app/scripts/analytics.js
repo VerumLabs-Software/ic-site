@@ -19,6 +19,8 @@ export default function analytics() {
     app_type: "ic_landing",
   });
 
+  mixpanel.track("landing_session");
+
   for (const event in EVENTS) {
     const actions = document.querySelectorAll(`[data-analytics="${event}"]`);
 
