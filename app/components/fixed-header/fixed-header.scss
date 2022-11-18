@@ -48,10 +48,10 @@
   }
 
   &__logo {
-    max-width: 252px;
+    max-width: 191px;
 
     @include screen(md) {
-      max-width: 202px;
+      max-width: 150px;
     }
 
     img {
