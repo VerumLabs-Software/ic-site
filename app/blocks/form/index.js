@@ -6,8 +6,8 @@ import Inputmask from "inputmask";
 // import "parsleyjs";
 
 export default function form() {
-  const scriptURL =
-    "https://script.google.com/macros/s/AKfycbwq7nCRfnNyXkzo3obxg_0me6h1tNDoSQtD0T1l7t02CXxq7EKZTH-8MAsPzDD_Kxq1/exec";
+  const URL =
+    "https://ocdvb7oh5qebvwcw3tjn4hfwda0esyws.lambda-url.us-east-2.on.aws";
   const mainForm = document.getElementById("main-form");
   const submitButton = mainForm.querySelector("[data-submit]");
   const successMessage = mainForm.querySelector('[data-message="success"]');
@@ -21,13 +21,15 @@ export default function form() {
     const phoneInput = mainForm.querySelector('[data-mask="tel"]');
     const phoneDialCode = phoneInput.dataset.dialCode;
 
-    formData.set("phone", `+${phoneDialCode} ${formData.get("phone")}`);
+    formData.set("app_type", "ic");
+    formData.set("phone_number", `+${phoneDialCode}${formData.get("phone")}`);
+    formData.delete("phone");
 
     submitButton.classList.add("is-loading");
     successMessage.classList.remove("is-active");
     errorMessage.classList.remove("is-active");
 
-    fetch(scriptURL, {method: "POST", body: formData})
+    fetch(URL, {method: "POST", body: formData})
       .then(() => {
         mainForm.reset();
         successMessage.classList.add("is-active");
