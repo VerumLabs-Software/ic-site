@@ -19,6 +19,7 @@ export default function list() {
     while (
       --index &&
       window.scrollY + 1 - fixedHeaderOffsetTop < sections[index].offsetTop
+      // eslint-disable-next-line no-empty
     ) {}
 
     nav.forEach(list => {

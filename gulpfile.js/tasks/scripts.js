@@ -14,6 +14,7 @@ module.exports =
 
       if (jsonStats.errors.length) {
         jsonStats.errors.forEach(message => {
+          console.error(message);
           scriptsErrorHandler.call({emit() {}}, {message});
         });
       }
