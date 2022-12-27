@@ -9,7 +9,7 @@ export default function fixedHeader() {
     }
   };
 
-  window.addEventListener("load", checkWindowScroll);
+  checkWindowScroll();
   window.addEventListener("scroll", checkWindowScroll, {
     passive: true,
   });

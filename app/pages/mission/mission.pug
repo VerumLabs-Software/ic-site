@@ -1,0 +1,18 @@
+extends ../../layouts/default
+
+block content
+  body.mission-page
+    +header-mission('mission-navigation')
+    +menu('mission-navigation').show-sm
+
+    main
+      +section-vision
+      +section-values
+      +section-motto
+
+    +footer('full-navigation')
+
+    +popup-main-form
+    +popup-country-code
+
+    script(src="assets/scripts/mission.min.js")

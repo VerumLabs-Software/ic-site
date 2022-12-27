@@ -1,0 +1,22 @@
+mixin header-mission(json)
+  +b.HEADER(data-section="").header-mission#mission&attributes(attributes)
+    .container.hide-sm.header-mission__top
+      +e.NAV.__nav
+        a(href="/")
+          +image-svg('logo').__logo
+        +list(getData(json))._sm._bold._light.__list
+        +e.download-buttons.hide-md
+          +button-app-store._xxs._dark._app-store
+          +button-google-play._xxs._dark._google-play
+    .container.header-mission__content
+      a(href="/").show-sm
+        +icon('logo').__logo-mini
+      +burger._light.js-burger.show-sm
+      +e.text-content
+        +e.pretitle mission statement
+        +title('h1')._light.__title Empower <br><strong>everyone</strong>
+        +text._light._xl.__description to infinitely create inspiring<br> content & create wealth
+        +e.buttons.show-sm
+          +button-app-store._lg._dark._app-store
+          +button-google-play._lg._dark._google-play
+  +fixed-header-mission(json).hide-sm.js-nav

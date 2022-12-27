@@ -3,6 +3,14 @@
 
   $this: &;
 
+  &_light {
+    color: color(light);
+  }
+
+  &_gray {
+    color: color(gray);
+  }
+
   &_sm {
     font-size: 18px;
     line-height: 24px;
@@ -31,6 +39,21 @@
   &_lg {
     font-size: 28px;
     line-height: 40px;
+  }
+
+  &_xl {
+    font-size: 36px;
+    line-height: 48px;
+
+    @include screen(lg) {
+      font-size: 28px;
+      line-height: 40px;
+    }
+
+    @include screen(md) {
+      font-size: 24px;
+      line-height: 34px;
+    }
   }
 
   &_md,

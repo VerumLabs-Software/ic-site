@@ -31,7 +31,7 @@ const scrollable = () => {
     });
   };
 
-  window.addEventListener("load", checkScrollable);
+  checkScrollable();
   window.addEventListener("resize", checkScrollable);
 };
 

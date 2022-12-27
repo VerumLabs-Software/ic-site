@@ -1,0 +1,20 @@
+mixin section-motto()
+  +b.SECTION(data-section="").section-motto#motto&attributes(attributes)
+    .container.section-motto__container
+      +title._light.__title Motto
+      +grid.__grid
+        +col(2.4)
+          +motto-block('inspire', 'Inspire')
+        +col(2.4)
+          +motto-block('motivate', 'Motivate')
+        +col(2.4)
+          +motto-block('appreciate', 'Appreciate')
+        +col(2.4)
+          +motto-block('elevate', 'Elevate')
+        +col(2.4)
+          +motto-block('create', 'Infinitely create')
+
+mixin motto-block(icon, text)
+  +b.motto-block&attributes(attributes)
+    +icon(icon).__icon
+    +e.text!= text

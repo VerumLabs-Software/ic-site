@@ -1,15 +1,17 @@
-mixin header()
+mixin header(json)
   +b.HEADER(data-section="").header#about&attributes(attributes)
     .container.hide-sm.header__top
       +e.NAV.__nav
-        +image-svg('logo').__logo
-        +list(getData('navigation'))._sm._bold._light.__list
+        a(href="/")
+          +image-svg('logo').__logo
+        +list(getData(json))._sm._bold._light.__list
         +e.download-buttons.hide-lg
           +button-app-store._xs._dark._app-store
           +button-google-play._xs._dark._google-play
     +e.IMG(src='', alt='')#about-phone.__image.hide-sm
     .container.header__content
-      +icon('logo').show-sm.__logo-mini
+      a(href="/").show-sm
+        +icon('logo').__logo-mini
       +burger._light.js-burger.show-sm
       +e.text-content
         +title('h1')._light.__title Professional real estate content creation that’s fast, easy & affordable.<br><br><span>Delivered within 24 hours</span>
@@ -22,3 +24,4 @@ mixin header()
           .header__buttons.show-sm
             +button(href="https://infinitecreator.app.link/app", target="_blank", data-analytics="download_app_clicked")._lg._primary Download app
             +button(data-popup-trigger="country-code")._lg._dark Send me invite
+  +fixed-header(json).hide-sm.js-nav

@@ -1,0 +1,8 @@
+mixin section-values()
+  +b.SECTION(data-section="").section-values#values&attributes(attributes)
+    .container.section-values__container
+      +title.__title Values
+      +e.UL.list
+        each item in getData('mission-values')
+          +e.LI.item
+            +text._lg!= item.html

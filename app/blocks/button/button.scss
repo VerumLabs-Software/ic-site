@@ -57,6 +57,18 @@
   //   width: 80%;
   // }
 
+  &_xxs {
+    height: 30px;
+    padding: 2px 12px;
+    font-size: 13px;
+
+    @include screen(lg) {
+      height: 33px;
+      padding: 0 12px;
+      font-size: 11px;
+    }
+  }
+
   &_xs {
     height: 30px;
     padding: 4px 12px;
