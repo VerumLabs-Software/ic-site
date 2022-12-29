@@ -16,6 +16,11 @@
     "name": "Mobile app"
   },
   {
+    "href": "/mission",
+    "name": "Mission",
+    "external": true
+  },
+  {
     "href": "#",
     "name": "Enterprise",
     "popup": "main-form",

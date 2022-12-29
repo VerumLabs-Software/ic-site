@@ -13,30 +13,6 @@
     z-index: 1;
   }
 
-  .webp & {
-    background-image: url("../../assets/images/mission/bg.webp");
-
-    @media (-webkit-min-device-pixel-ratio: 2) {
-      background-image: url("../../assets/images/mission/bg@2x.webp");
-    }
-
-    @media (-webkit-min-device-pixel-ratio: 3) {
-      background-image: url("../../assets/images/mission/bg@3x.webp");
-    }
-  }
-
-  .nowebp & {
-    background-image: url("../../assets/images/mission/bg.jpg");
-
-    @media (-webkit-min-device-pixel-ratio: 2) {
-      background-image: url("../../assets/images/mission/bg@2x.jpg");
-    }
-
-    @media (-webkit-min-device-pixel-ratio: 3) {
-      background-image: url("../../assets/images/mission/bg@3x.jpg");
-    }
-  }
-
   @include screen(sm) {
     padding-top: 46px;
     padding-bottom: 43px;
@@ -97,7 +73,7 @@
       }
     }
 
-    > li:first-child > a {
+    > li:nth-child(5) > a {
       font-weight: 800 !important;
 
       &:focus,

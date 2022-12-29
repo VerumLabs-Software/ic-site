@@ -2,13 +2,13 @@ extends ../../layouts/default
 
 block content
   body.terms-page
-    +fixed-header('navigation-reverse').hide-sm
-    +menu('terms-navigation').show-sm
+    +fixed-header('navigation-external').hide-sm
+    +menu('full-navigation-external').show-sm
 
     main
       +section-terms
 
-    +footer('terms-navigation')
+    +footer('full-navigation-external')
 
     +popup-main-form
     +popup-country-code

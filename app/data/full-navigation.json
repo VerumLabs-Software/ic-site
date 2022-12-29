@@ -24,18 +24,23 @@
     "name": "Join us"
   },
   {
+    "href": "/mission",
+    "name": "Mission",
+    "external": true
+  },
+  {
     "href": "#",
     "name": "Enterprise",
     "popup": "main-form",
     "analytics": "enterprise_clicked"
   },
   {
-    "href": "./privacy",
+    "href": "/privacy",
     "name": "Privacy policy",
     "external": true
   },
   {
-    "href": "./terms",
+    "href": "/terms",
     "name": "Terms of Use",
     "external": true
   }

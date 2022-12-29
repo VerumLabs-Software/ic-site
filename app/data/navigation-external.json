@@ -1,22 +1,27 @@
 [
   {
-    "href": "./#about",
+    "href": "/#about",
     "name": "About",
     "external": true
   },
   {
-    "href": "./#how-it-works",
+    "href": "/#how-it-works",
     "name": "How it works?",
     "external": true
   },
   {
-    "href": "./#achivements",
+    "href": "/#achivements",
     "name": "Main Features",
     "external": true
   },
   {
-    "href": "./#mobile-app",
+    "href": "/#mobile-app",
     "name": "Mobile app",
+    "external": true
+  },
+  {
+    "href": "/mission",
+    "name": "Mission",
     "external": true
   },
   {

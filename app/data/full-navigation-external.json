@@ -1,32 +1,37 @@
 [
   {
-    "href": "./#about",
+    "href": "/#about",
     "name": "About",
     "external": true
   },
   {
-    "href": "./#how-it-works",
+    "href": "/#how-it-works",
     "name": "How it works?",
     "external": true
   },
   {
-    "href": "./#achivements",
+    "href": "/#achivements",
     "name": "Main Features",
     "external": true
   },
   {
-    "href": "./#mobile-app",
+    "href": "/#mobile-app",
     "name": "Mobile app",
     "external": true
   },
   {
-    "href": "./#clients",
+    "href": "/#clients",
     "name": "Clients",
     "external": true
   },
   {
-    "href": "./#join-us",
+    "href": "/#join-us",
     "name": "Join us",
+    "external": true
+  },
+  {
+    "href": "/mission",
+    "name": "Mission",
     "external": true
   },
   {
@@ -36,11 +41,12 @@
     "analytics": "enterprise_clicked"
   },
   {
-    "href": "#privacy",
-    "name": "Privacy policy"
+    "href": "/privacy",
+    "name": "Privacy policy",
+    "external": true
   },
   {
-    "href": "./terms",
+    "href": "/terms",
     "name": "Terms of Use",
     "external": true
   }
