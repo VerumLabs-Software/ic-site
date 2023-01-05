@@ -22,22 +22,28 @@ export default function form() {
     const phoneDialCode = phoneInput.dataset.dialCode;
 
     formData.set("app_type", "ic");
-    formData.set("phone_number", `+${phoneDialCode}${formData.get("phone")}`);
+    formData.set("phone_number", `+${phoneDialCode} ${formData.get("phone")}`);
     formData.delete("phone");
 
     submitButton.classList.add("is-loading");
     successMessage.classList.remove("is-active");
     errorMessage.classList.remove("is-active");
 
-    fetch(URL, {method: "POST", body: formData})
+    fetch(URL, {
+      method: "POST",
+      body: JSON.stringify(Object.fromEntries(formData)),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then(() => {
         mainForm.reset();
         successMessage.classList.add("is-active");
         successMessage.innerHTML = "Form submitted successfully!";
       })
-      .catch(error => {
+      .catch(() => {
         errorMessage.classList.add("is-active");
-        errorMessage.innerHTML = error.message;
+        errorMessage.innerHTML = "Something went wrong!";
       })
       .finally(() => {
         submitButton.classList.remove("is-loading");
