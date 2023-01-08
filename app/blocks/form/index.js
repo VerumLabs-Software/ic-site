@@ -6,6 +6,8 @@ import Inputmask from "inputmask";
 // import "parsleyjs";
 
 export default function form() {
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbwq7nCRfnNyXkzo3obxg_0me6h1tNDoSQtD0T1l7t02CXxq7EKZTH-8MAsPzDD_Kxq1/exec";
   const URL =
     "https://ocdvb7oh5qebvwcw3tjn4hfwda0esyws.lambda-url.us-east-2.on.aws";
   const mainForm = document.getElementById("main-form");
@@ -21,6 +23,10 @@ export default function form() {
     const phoneInput = mainForm.querySelector('[data-mask="tel"]');
     const phoneDialCode = phoneInput.dataset.dialCode;
 
+    const fetchOptions = {
+      method: "POST",
+    };
+
     formData.set("app_type", "ic");
     formData.set("phone_number", `+${phoneDialCode} ${formData.get("phone")}`);
     formData.delete("phone");
@@ -30,22 +36,53 @@ export default function form() {
     errorMessage.classList.remove("is-active");
 
     fetch(URL, {
-      method: "POST",
       body: JSON.stringify(Object.fromEntries(formData)),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      ...fetchOptions,
     })
-      .then(() => {
-        mainForm.reset();
-        successMessage.classList.add("is-active");
-        successMessage.innerHTML = "Form submitted successfully!";
+      .then(data => data.json())
+      .then(data => {
+        submitButton.classList.remove("is-loading");
+
+        if (typeof data.retry_after === "number") {
+          errorMessage.classList.add("is-active");
+
+          let retry_after = data.retry_after;
+          let timerId = null;
+
+          const tick = () => {
+            errorMessage.innerHTML =
+              data.info.replace("`retry_after`", --retry_after) ||
+              `Too fast. You may retry after ${--retry_after} seconds.`;
+
+            if (retry_after <= 0) {
+              errorMessage.classList.remove("is-active");
+              clearInterval(timerId);
+            }
+          };
+
+          tick();
+          timerId = setInterval(tick, 1000);
+        } else {
+          submitButton.classList.add("is-loading");
+
+          fetch(SCRIPT_URL, {
+            body: formData,
+            ...fetchOptions,
+          })
+            .then(() => {
+              mainForm.reset();
+              successMessage.classList.add("is-active");
+              successMessage.innerHTML =
+                data.info || "Form submitted successfully!";
+            })
+            .finally(() => {
+              submitButton.classList.remove("is-loading");
+            });
+        }
       })
       .catch(() => {
         errorMessage.classList.add("is-active");
         errorMessage.innerHTML = "Something went wrong!";
-      })
-      .finally(() => {
         submitButton.classList.remove("is-loading");
       });
   });
