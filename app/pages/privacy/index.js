@@ -10,6 +10,7 @@ import burger from "../../blocks/burger";
 import anchor from "../../scripts/anchor";
 import analytics from "../../scripts/analytics";
 
+import footer from "../../components/footer";
 import fixedHeader from "../../components/fixed-header";
 
 window.addEventListener("load", () => {
@@ -20,6 +21,7 @@ window.addEventListener("load", () => {
   popup();
   burger();
   anchor();
+  footer();
   fixedHeader();
   svg4everybody();
   objectFitImages();

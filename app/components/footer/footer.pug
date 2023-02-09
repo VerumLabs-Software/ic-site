@@ -1,5 +1,4 @@
 mixin footer(listData)
-  - const year = new Date().getFullYear();
   +b.FOOTER.footer&attributes(attributes)
     .container
       +e.content
@@ -15,7 +14,7 @@ mixin footer(listData)
               p(data-message="error")
             +button(data-popup-trigger="country-code")._sm._primary.show-sm Send me invite
           +list(getData(listData))._md._light-gray.__list
-          +e.copyright &#169; #{year} Infinite Creator
+          +e.copyright#copyright © 2023 Infinite Creator
         +e.buttons
           +button-google-play._dark._google-play.__button
           +button-app-store._dark._app-store.__button
