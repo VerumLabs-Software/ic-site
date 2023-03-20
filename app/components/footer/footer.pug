@@ -6,15 +6,17 @@ mixin footer(listData)
           +e.main-top
             a(href="/")
               +image-svg('logo').__logo
-            +form(data-invite="", method="POST", data-analytics="get_link_clicked").__form
-              +inputbox._sm._dark.__inputbox.hide-sm
-                +input-phone._sm._dark
-                +button('button')(data-submit="")._sm._primary Send me invite
-              p(data-message="success")
-              p(data-message="error")
-            +button(data-popup-trigger="country-code")._sm._primary.show-sm Send me invite
+            //- +form(data-invite="", method="POST", data-analytics="get_link_clicked").__form
+            //-   +inputbox._sm._dark.__inputbox.hide-sm
+            //-     +input-phone._sm._dark
+            //-     +button('button')(data-submit="")._sm._primary Send me invite
+            //-   p(data-message="success")
+            //-   p(data-message="error")
+            //- +button(data-popup-trigger="country-code")._sm._primary.show-sm Send me invite
           +list(getData(listData))._md._light-gray.__list
           +e.copyright#copyright © 2023 Infinite Creator
-        +e.buttons
-          +button-google-play._dark._google-play.__button
-          +button-app-store._dark._app-store.__button
+        +e.bottom
+          +image-png('qr').__qr
+          +e.buttons
+            +button-google-play._dark._google-play.__button
+            +button-app-store._dark._app-store.__button
