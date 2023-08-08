@@ -1,7 +1,8 @@
 const {Modernizr, devicePixelRatio} = window;
 
 export const getDPRPostfix = () => {
-  const dpr = Math.min(Math.max(devicePixelRatio, 1), 3);
+  const _devicePixelRatio = Math.floor(devicePixelRatio);
+  const dpr = Math.min(Math.max(_devicePixelRatio, 1), 3);
   return dpr > 1 ? `@${dpr}x` : "";
 };
 
