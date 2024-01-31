@@ -19,6 +19,7 @@
   }
 
   &__pretitle {
+    margin-bottom: 40px;
     font-size: 24px;
     font-weight: 400;
     line-height: 24px;
@@ -164,7 +165,7 @@
   }
 
   &__title.title {
-    margin-top: 38px;
+    margin-bottom: 24px;
 
     @include screen(sm) {
       margin-top: 19px;
@@ -191,9 +192,9 @@
       }
 
       strong {
-        margin-top: 10px;
+        line-high: 50px;
         font-size: 1.5em;
-        line-height: 0;
+        //line-height: 0;
         letter-spacing: 0.06em;
       }
     }
