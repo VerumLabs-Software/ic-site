@@ -2,12 +2,27 @@
   position: fixed;
   z-index: 1000;
   top: 0;
-  left: 0;
   right: 0;
-  padding: 12px 30px 40px 30px;
-  background-color: rgba(color(light), 0.95);
-  transform: translateY(-100%);
+  bottom: 0;
+  width: 30%;
+  padding: 40px 30px 40px 30px;
+  background-color: color(light);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0);
   transition: transform $ease-main;
+
+  &:not(.is-active) {
+    transform: translateX(100%);
+  }
+
+  @include screen(sm) {
+    &.is-active {
+      width: calc(100% - 60px);
+      bottom: auto;
+      left: 0;
+    }
+  }
 
   $this: &;
 
@@ -16,18 +31,35 @@
   }
 
   &.is-active {
-    transform: translateY(0);
+    transform: translateX(0);
+
+    @include screen(sm) {
+      transform: translateY(0);
+    }
   }
 
   &__nav {
-    margin-top: 40px;
+    margin-top: 25px;
+
+    & ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-size: 20px;
+      font-weight: 500;
+
+      @include screen(sm) {
+        gap: 10px
+      }
+    }
   }
 
   &__close {
     padding: 5px 5px 5px 0;
+    align-self: end;
   }
 
   &__close-icon {
-    @include size(16px, max);
+    @include size(24px, max);
   }
 }
