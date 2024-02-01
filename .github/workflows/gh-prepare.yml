@@ -5,9 +5,6 @@ on:
   push:
     branches: ["master"]
 
-permissions:
-  contents: read
-
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -21,5 +18,7 @@ jobs:
         with:
           node-version-file: 'package.json'
           cache: 'yarn'
-      - run: yarn install
-      - run: echo 'Test is successful!'
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn deploy
