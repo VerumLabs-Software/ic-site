@@ -1,0 +1,9 @@
+mixin section-mission-statement()
+  +b.SECTION(data-section="").section-mission-statement#mission-statement&attributes(attributes)
+    .container.section-vision__container
+      +b.inner-logo
+        +icon('logo').icon
+        +title('h2')._light MISSION STATEMENT
+      +b.description
+        each item in getData('mission-statement')
+          +text._lg.text_light!= item.html

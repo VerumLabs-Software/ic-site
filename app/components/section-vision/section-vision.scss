@@ -20,7 +20,7 @@
 
     > *:first-child {
       @include screen(sm) {
-        text-align: center;
+        text-align: start;
       }
     }
 

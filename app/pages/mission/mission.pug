@@ -3,13 +3,14 @@ extends ../../layouts/default
 block content
   body.mission-page
     +header-mission('navigation-external')
-    +menu('full-navigation-external').show-sm
+    +menu('full-navigation-external')
 
     main
-      +section-vision
+      +section-mission-statement
       +section-values
+      +section-vision
       +section-motto
-
+      +section-intention
     +footer('full-navigation-external')
 
     +popup-main-form
