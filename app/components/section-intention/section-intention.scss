@@ -45,4 +45,18 @@
       gap: 16px;
     }
   }
+
+  &__item {
+    .text {
+      line-height: 58px;
+      @include screen(lg) {
+        line-height: 48px;
+      }
+
+      @include screen(sm) {
+        font-size: 18px;
+        line-height: 32px;
+      }
+    }
+  }
 }
