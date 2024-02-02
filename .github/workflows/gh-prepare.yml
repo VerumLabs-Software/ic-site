@@ -23,4 +23,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build
-        run: yarn deploy
+        run: |
+          mkdir .publish
+          mkdir dist
+          yarn deploy
