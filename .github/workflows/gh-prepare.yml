@@ -5,8 +5,7 @@ on:
   push:
     branches: ["master"]
 
-permissions:
-  contents: write
+permissions: write-all
 
 concurrency:
   group: "pages"
