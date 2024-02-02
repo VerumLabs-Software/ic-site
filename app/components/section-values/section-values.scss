@@ -16,9 +16,14 @@
       line-height: 64px;
       text-align: center;
 
-      @include screen(sm) {
+      @include screen(md) {
         font-size: 40px;
         line-height: 40px;
+      }
+
+      @include screen(sm) {
+        font-size: 32px;
+        line-height: 32px;
       }
     }
   }
@@ -31,12 +36,13 @@
     .text {
       line-height: 58px;
 
-      @include screen(lg) {
-        line-height: 48px;
+      @include screen(md) {
+        line-height: 40px;
+        font-size: 20px;
       }
 
       @include screen(sm) {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 32px;
       }
 

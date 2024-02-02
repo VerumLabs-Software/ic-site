@@ -4,4 +4,4 @@ mixin section-intention()
       +title('h2') INTENTION
       +b.description
         each item in getData('intention')
-          +text._lg!= item.html
+          +text.description_text= item.html
