@@ -46,17 +46,21 @@
     }
   }
 
-  &__item {
-    .text {
-      line-height: 58px;
-      @include screen(lg) {
-        line-height: 48px;
-      }
+  & .description_text {
+    font-size: 28px;
+    line-height: 52px;
+    font-weight: 400;
 
-      @include screen(sm) {
-        font-size: 18px;
-        line-height: 32px;
-      }
+    @include screen(md) {
+      font-size: 20px;
+      line-height: 32px;
+    }
+
+    @include screen(sm) {
+      font-size: 16px;
+      line-height: 28px;
     }
   }
 }
+
+
