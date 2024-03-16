@@ -11,6 +11,7 @@ module.exports = () => ({
   entry: {
     head: path.resolve("./app/scripts/head"),
     app: path.resolve("./app/pages/index"),
+    delete: path.resolve("./app/pages/delete"),
     mission: path.resolve("./app/pages/mission"),
     privacy: path.resolve("./app/pages/privacy"),
     terms: path.resolve("./app/pages/terms"),

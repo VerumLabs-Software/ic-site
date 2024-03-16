@@ -1,0 +1,26 @@
+mixin section-delete-form()
+  +b.SECTION.section-delete-form&attributes(attributes)
+    .container
+      +e.H1.title Delete my personal info
+      +form.__form#delete-form
+        +inputcol
+          +inputwrapper
+            +inputlabel Name
+            +inputbox._sm-fixed._light
+              +input(type="text", name="name", required=true)._sm-fixed._light
+          +inputwrapper
+            +inputlabel Phone
+            +inputbox._sm-fixed._light
+              +input-phone._sm-fixed._light
+          +inputwrapper
+            +inputlabel Email
+            +inputbox._sm-fixed._light
+              +input(type="email", name="email", required=true)._sm-fixed._light
+          +inputwrapper
+            +inputlabel Message
+            +inputbox._sm-fixed._light
+              +textarea(name="comment")._sm-fixed._light
+        p(data-message="success")
+        p(data-message="error")
+        +e.buttons
+          +button('button')(data-submit="")._primary._xl Submit

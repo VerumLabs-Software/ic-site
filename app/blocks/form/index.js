@@ -2,22 +2,23 @@
 import intlTelInput from "intl-tel-input";
 import Inputmask from "inputmask";
 
-// http://parsleyjs.org/doc/index.html
-// import "parsleyjs";
-
 export default function form() {
-  const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbwq7nCRfnNyXkzo3obxg_0me6h1tNDoSQtD0T1l7t02CXxq7EKZTH-8MAsPzDD_Kxq1/exec";
-  const URL =
-    "https://ocdvb7oh5qebvwcw3tjn4hfwda0esyws.lambda-url.us-east-2.on.aws";
   const mainForm = document.getElementById("main-form");
-  const submitButton = mainForm.querySelector("[data-submit]");
-  const successMessage = mainForm.querySelector('[data-message="success"]');
-  const errorMessage = mainForm.querySelector('[data-message="error"]');
+  const deleteForm = document.getElementById("delete-form");
   const telInputs = document.querySelectorAll('input[type="tel"]');
 
+  // Main Form (Enterprise)
   mainForm?.addEventListener("submit", e => {
     e.preventDefault();
+
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbwq7nCRfnNyXkzo3obxg_0me6h1tNDoSQtD0T1l7t02CXxq7EKZTH-8MAsPzDD_Kxq1/exec";
+    const MAIN_URL =
+      "https://ocdvb7oh5qebvwcw3tjn4hfwda0esyws.lambda-url.us-east-2.on.aws";
+
+    const submitButton = mainForm.querySelector("[data-submit]");
+    const successMessage = mainForm.querySelector('[data-message="success"]');
+    const errorMessage = mainForm.querySelector('[data-message="error"]');
 
     const formData = new FormData(mainForm);
     const phoneInput = mainForm.querySelector('[data-mask="tel"]');
@@ -35,7 +36,7 @@ export default function form() {
     successMessage.classList.remove("is-active");
     errorMessage.classList.remove("is-active");
 
-    fetch(URL, {
+    fetch(MAIN_URL, {
       body: JSON.stringify(Object.fromEntries(formData)),
       ...fetchOptions,
     })
@@ -87,6 +88,53 @@ export default function form() {
       });
   });
 
+  // Delete Form
+  deleteForm?.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const DELETE_URL = "https://djf7170qb8atf.cloudfront.net/deleteme";
+
+    const submitButton = deleteForm.querySelector("[data-submit]");
+    const successMessage = deleteForm.querySelector('[data-message="success"]');
+    const errorMessage = deleteForm.querySelector('[data-message="error"]');
+
+    const formData = new FormData(deleteForm);
+    const phoneInput = deleteForm.querySelector('[data-mask="tel"]');
+    const phoneDialCode = phoneInput.dataset.dialCode;
+
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    formData.set("phone", `+${phoneDialCode} ${formData.get("phone")}`);
+
+    submitButton.classList.add("is-loading");
+    successMessage.classList.remove("is-active");
+    errorMessage.classList.remove("is-active");
+
+    fetch(DELETE_URL, {
+      body: JSON.stringify(Object.fromEntries(formData)),
+      ...fetchOptions,
+    })
+      .then(data => data.json())
+      .then(data => {
+        deleteForm.reset();
+        successMessage.classList.add("is-active");
+        successMessage.innerHTML = data.info || "Form submitted successfully!";
+      })
+      .catch(() => {
+        errorMessage.classList.add("is-active");
+        errorMessage.innerHTML = "Something went wrong!";
+      })
+      .finally(() => {
+        submitButton.classList.remove("is-loading");
+      });
+  });
+
+  // Phone Inputs
   telInputs.forEach(input => {
     intlTelInput(input, {
       autoPlaceholder: "aggressive",
