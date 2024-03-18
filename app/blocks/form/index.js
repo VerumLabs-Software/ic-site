@@ -109,7 +109,10 @@ export default function form() {
       },
     };
 
-    formData.set("phone", `+${phoneDialCode} ${formData.get("phone")}`);
+    formData.set(
+      "phone",
+      `+${phoneDialCode}${formData.get("phone")}`.replace(/[\s-()]/g, ""),
+    );
 
     submitButton.classList.add("is-loading");
     successMessage.classList.remove("is-active");
@@ -121,13 +124,19 @@ export default function form() {
     })
       .then(data => data.json())
       .then(data => {
-        deleteForm.reset();
-        successMessage.classList.add("is-active");
-        successMessage.innerHTML = data.info || "Form submitted successfully!";
+        if (data.code === "bad_request") {
+          errorMessage.classList.add("is-active");
+          errorMessage.innerHTML = data.message || "Something went wrong!";
+        } else {
+          deleteForm.reset();
+          successMessage.classList.add("is-active");
+          successMessage.innerHTML =
+            data.message || "Form submitted successfully!";
+        }
       })
-      .catch(() => {
+      .catch(err => {
         errorMessage.classList.add("is-active");
-        errorMessage.innerHTML = "Something went wrong!";
+        errorMessage.innerHTML = err.message || "Something went wrong!";
       })
       .finally(() => {
         submitButton.classList.remove("is-loading");
