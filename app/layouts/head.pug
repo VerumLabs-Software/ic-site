@@ -43,6 +43,14 @@ head
   //- Styles
   link(href='assets/styles/app.min.css' rel='stylesheet')
 
+  //- Tapfiliate
+  script(src="https://script.tapfiliate.com/tapfiliate.js" type="text/javascript" async)
+  script(type="text/javascript").
+    (function(t,a,p){t.TapfiliateObject=a;t[a]=t[a]||function(){ (t[a].q=t[a].q||[]).push(arguments)}})(window,'tap');
+
+    tap('create', '49381-dae5cc', { integration: "javascript" });
+    tap('detect');
+
   //- Scripts
   script(src="assets/scripts/head.min.js")
   script(src='assets/scripts/libs/webp-modernizr.min.js')
