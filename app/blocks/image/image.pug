@@ -9,13 +9,16 @@ mixin image-jpg(src, alt)
     block
 
 //- Need sync with createImage function
-mixin image-png(src, alt)
+mixin image-png(src, alt, className)
   - const image = `assets/images/${src}`
 
   +b.image&attributes(attributes)
-    picture
-      source(srcset=`${image}.webp, ${image}@2x.webp 2x, ${image}@3x.webp 3x`, type='image/webp')
-      img(srcset=`${image}.png, ${image}@2x.png 2x, ${image}@3x.png 3x`, src=`${image}.png` alt=alt || '')
+    - const imageStyles = className === 'qr' ? 'position: relative; width: 192px; height: 192px;' : ''
+    picture(style=imageStyles)
+      if className === 'qr'
+        div.skeleton-loader
+      source(srcset=`${image}.webp, ${image}@2x.webp 2x, ${image}@3x.webp 3x`, type='image/webp' class=className || '')
+      img(srcset=`${image}.png, ${image}@2x.png 2x, ${image}@3x.png 3x`, class=className || '', src=`${image}.png` alt=alt || '')
     block
 
 mixin image-svg(src, alt)
